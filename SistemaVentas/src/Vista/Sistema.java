@@ -77,7 +77,7 @@ public class Sistema extends javax.swing.JFrame {
         BtnActualizarCliente = new javax.swing.JButton();
         BtnCrearCliente = new javax.swing.JButton();
         BtnEliminarCliente = new javax.swing.JButton();
-        ContenedorSuplidor = new javax.swing.JPanel();
+        ContenedorProveedor = new javax.swing.JPanel();
         LbRncSup = new javax.swing.JLabel();
         TxtRncSup = new javax.swing.JTextField();
         LbCodigoSup = new javax.swing.JLabel();
@@ -151,7 +151,7 @@ public class Sistema extends javax.swing.JFrame {
         });
 
         BtnSuplidor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/proveedor.png"))); // NOI18N
-        BtnSuplidor.setText("Suplidor");
+        BtnSuplidor.setText("Proveedor");
         BtnSuplidor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSuplidorActionPerformed(evt);
@@ -569,82 +569,82 @@ public class Sistema extends javax.swing.JFrame {
         BtnEliminarSup.setText("ELIMINAR");
         BtnEliminarSup.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout ContenedorSuplidorLayout = new javax.swing.GroupLayout(ContenedorSuplidor);
-        ContenedorSuplidor.setLayout(ContenedorSuplidorLayout);
-        ContenedorSuplidorLayout.setHorizontalGroup(
-            ContenedorSuplidorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ContenedorSuplidorLayout.createSequentialGroup()
+        javax.swing.GroupLayout ContenedorProveedorLayout = new javax.swing.GroupLayout(ContenedorProveedor);
+        ContenedorProveedor.setLayout(ContenedorProveedorLayout);
+        ContenedorProveedorLayout.setHorizontalGroup(
+            ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ContenedorProveedorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(ContenedorSuplidorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ContenedorSuplidorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(ContenedorSuplidorLayout.createSequentialGroup()
+                .addGroup(ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(ContenedorProveedorLayout.createSequentialGroup()
                             .addComponent(LbDirrSup)
                             .addGap(18, 18, 18)
                             .addComponent(TxtDirrSup))
-                        .addGroup(ContenedorSuplidorLayout.createSequentialGroup()
-                            .addGroup(ContenedorSuplidorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(ContenedorProveedorLayout.createSequentialGroup()
+                            .addGroup(ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(LbCodigoSup)
                                 .addComponent(LbRncSup)
                                 .addComponent(LbNombreSup))
                             .addGap(32, 32, 32)
-                            .addGroup(ContenedorSuplidorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(TxtRncSup, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(TxtNombreSup, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(TxtCodigoSup, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(ContenedorSuplidorLayout.createSequentialGroup()
+                        .addGroup(ContenedorProveedorLayout.createSequentialGroup()
                             .addComponent(LbTelSup)
                             .addGap(18, 18, 18)
                             .addComponent(TxtTelefonoSup, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(ContenedorSuplidorLayout.createSequentialGroup()
-                        .addGroup(ContenedorSuplidorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(ContenedorProveedorLayout.createSequentialGroup()
+                        .addGroup(ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(BtnGuardarSup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(BtnCrearSup, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(ContenedorSuplidorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(BtnActualizarSup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(BtnEliminarSup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ScrollSuplidor, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(33, Short.MAX_VALUE))
         );
-        ContenedorSuplidorLayout.setVerticalGroup(
-            ContenedorSuplidorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ContenedorSuplidorLayout.createSequentialGroup()
+        ContenedorProveedorLayout.setVerticalGroup(
+            ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ContenedorProveedorLayout.createSequentialGroup()
                 .addGap(54, 54, 54)
-                .addGroup(ContenedorSuplidorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(LbCodigoSup)
                     .addComponent(TxtCodigoSup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ContenedorSuplidorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ContenedorSuplidorLayout.createSequentialGroup()
-                        .addGroup(ContenedorSuplidorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ContenedorProveedorLayout.createSequentialGroup()
+                        .addGroup(ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LbRncSup)
                             .addComponent(TxtRncSup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(ContenedorSuplidorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LbNombreSup)
                             .addComponent(TxtNombreSup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(ContenedorSuplidorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LbDirrSup)
                             .addComponent(TxtDirrSup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(ContenedorSuplidorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LbTelSup)
                             .addComponent(TxtTelefonoSup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(35, 35, 35)
-                        .addGroup(ContenedorSuplidorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BtnGuardarSup)
                             .addComponent(BtnActualizarSup))
                         .addGap(18, 18, 18)
-                        .addGroup(ContenedorSuplidorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BtnCrearSup)
                             .addComponent(BtnEliminarSup)))
                     .addComponent(ScrollSuplidor, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(81, Short.MAX_VALUE))
         );
 
-        ContenedorPrincipal.addTab("SUPLIDORRES", ContenedorSuplidor);
+        ContenedorPrincipal.addTab("Proveedores", ContenedorProveedor);
 
         LbDescripcionProducto.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         LbDescripcionProducto.setText("DESCRIPCION");
@@ -1128,7 +1128,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JPanel ContenedorConfiguracion;
     private javax.swing.JTabbedPane ContenedorPrincipal;
     private javax.swing.JPanel ContenedorProductos;
-    private javax.swing.JPanel ContenedorSuplidor;
+    private javax.swing.JPanel ContenedorProveedor;
     private javax.swing.JPanel ContenedorVentas;
     private javax.swing.JTextField EmpresaCorreo;
     private javax.swing.JTextField EmpresaDireccion;

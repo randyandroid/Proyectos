@@ -102,7 +102,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Img/proveedor.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Suplidor"/>
+            <Property name="text" type="java.lang.String" value="Proveedor"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnSuplidorActionPerformed"/>
@@ -719,11 +719,11 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="ContenedorSuplidor">
+        <Container class="javax.swing.JPanel" name="ContenedorProveedor">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="SUPLIDORRES">
-                <Property name="tabTitle" type="java.lang.String" value="SUPLIDORRES"/>
+              <JTabbedPaneConstraints tabName="Proveedores">
+                <Property name="tabTitle" type="java.lang.String" value="Proveedores"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
