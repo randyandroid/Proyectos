@@ -5,15 +5,23 @@
  */
 package Vista;
 
+import Modelo.Cliente;
+import Modelo.ClienteDAO;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author adm
  */
 public class SistemaG extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Sistema
-     */
+    
+    //INSTANCIO
+    
+Cliente objCliente = new Cliente();
+ClienteDAO objClienteDAO = new ClienteDAO();
+
+
     public SistemaG() {
         initComponents();
     }
@@ -68,7 +76,7 @@ public class SistemaG extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         TxtCodigoCliente = new javax.swing.JTextField();
         TxtRncCliente = new javax.swing.JTextField();
-        TxtNombreCliente = new javax.swing.JTextField();
+        TxtApellidoCliente = new javax.swing.JTextField();
         TxtDirrCliente = new javax.swing.JTextField();
         TxtTelCliente = new javax.swing.JTextField();
         ScrollCliente = new javax.swing.JScrollPane();
@@ -77,6 +85,8 @@ public class SistemaG extends javax.swing.JFrame {
         BtnActualizarCliente = new javax.swing.JButton();
         BtnCrearCliente = new javax.swing.JButton();
         BtnEliminarCliente = new javax.swing.JButton();
+        LbNombreCliente1 = new javax.swing.JLabel();
+        TxtNombreCliente = new javax.swing.JTextField();
         ContenedorProveedor = new javax.swing.JPanel();
         LbRncSup = new javax.swing.JLabel();
         TxtRncSup = new javax.swing.JTextField();
@@ -395,9 +405,9 @@ public class SistemaG extends javax.swing.JFrame {
         LbTelCliente.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         LbTelCliente.setText("TELEFONO:");
 
-        TxtNombreCliente.addActionListener(new java.awt.event.ActionListener() {
+        TxtApellidoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtNombreClienteActionPerformed(evt);
+                TxtApellidoClienteActionPerformed(evt);
             }
         });
 
@@ -421,6 +431,11 @@ public class SistemaG extends javax.swing.JFrame {
         BtnGuardarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/GuardarTodo.png"))); // NOI18N
         BtnGuardarCliente.setText("GUARDAR");
         BtnGuardarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarClienteActionPerformed(evt);
+            }
+        });
 
         BtnActualizarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
         BtnActualizarCliente.setText("ACTUALIZAR");
@@ -434,6 +449,15 @@ public class SistemaG extends javax.swing.JFrame {
         BtnEliminarCliente.setText("ELIMINAR");
         BtnEliminarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        LbNombreCliente1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        LbNombreCliente1.setText("Apellido:");
+
+        TxtNombreCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtNombreClienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout ContenedorClientesLayout = new javax.swing.GroupLayout(ContenedorClientes);
         ContenedorClientes.setLayout(ContenedorClientesLayout);
         ContenedorClientesLayout.setHorizontalGroup(
@@ -441,21 +465,23 @@ public class SistemaG extends javax.swing.JFrame {
             .addGroup(ContenedorClientesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(ContenedorClientesLayout.createSequentialGroup()
-                        .addComponent(LbDirrCliente)
-                        .addGap(18, 18, 18)
-                        .addComponent(TxtDirrCliente))
                     .addComponent(jLabel9)
-                    .addGroup(ContenedorClientesLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorClientesLayout.createSequentialGroup()
                         .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LbCodigoCliente)
-                            .addComponent(LbRncCliente)
-                            .addComponent(LbNombreCliente))
-                        .addGap(32, 32, 32)
+                            .addGroup(ContenedorClientesLayout.createSequentialGroup()
+                                .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LbCodigoCliente)
+                                    .addComponent(LbRncCliente)
+                                    .addComponent(LbNombreCliente))
+                                .addGap(32, 32, 32))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorClientesLayout.createSequentialGroup()
+                                .addComponent(LbDirrCliente)
+                                .addGap(18, 18, 18)))
                         .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(TxtRncCliente, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TxtNombreCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtCodigoCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(TxtCodigoCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtDirrCliente)
+                            .addComponent(TxtNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(ContenedorClientesLayout.createSequentialGroup()
                         .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(BtnGuardarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -467,7 +493,11 @@ public class SistemaG extends javax.swing.JFrame {
                     .addGroup(ContenedorClientesLayout.createSequentialGroup()
                         .addComponent(LbTelCliente)
                         .addGap(18, 18, 18)
-                        .addComponent(TxtTelCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(TxtTelCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ContenedorClientesLayout.createSequentialGroup()
+                        .addComponent(LbNombreCliente1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TxtApellidoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(ScrollCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(21, Short.MAX_VALUE))
@@ -489,15 +519,19 @@ public class SistemaG extends javax.swing.JFrame {
                         .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LbNombreCliente)
                             .addComponent(TxtNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LbDirrCliente)
-                            .addComponent(TxtDirrCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addComponent(LbNombreCliente1)
+                            .addComponent(TxtApellidoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
+                        .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TxtDirrCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LbDirrCliente))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LbTelCliente)
                             .addComponent(TxtTelCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(47, 47, 47)
+                        .addGap(18, 18, 18)
                         .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BtnGuardarCliente)
                             .addComponent(BtnActualizarCliente)))
@@ -508,9 +542,9 @@ public class SistemaG extends javax.swing.JFrame {
                 .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnCrearCliente)
                     .addComponent(BtnEliminarCliente))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(jLabel9)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         ContenedorPrincipal.addTab("CLIENTES", ContenedorClientes);
@@ -1025,9 +1059,9 @@ public class SistemaG extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtCantProdFacActionPerformed
 
-    private void TxtNombreClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNombreClienteActionPerformed
+    private void TxtApellidoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtApellidoClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtNombreClienteActionPerformed
+    }//GEN-LAST:event_TxtApellidoClienteActionPerformed
 
     private void TxtNombreSupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNombreSupActionPerformed
         // TODO add your handling code here:
@@ -1068,6 +1102,34 @@ public class SistemaG extends javax.swing.JFrame {
     private void EmpresaTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpresaTelefonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EmpresaTelefonoActionPerformed
+
+    private void BtnGuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarClienteActionPerformed
+        
+        //VALIDO QUE LOS CAMPOS NO ESTEN VACIOS:
+        if (!"".equals(TxtRncCliente.getText()) || !"".equals(TxtApellidoCliente.getText()) || !"".equals(TxtDirrCliente.getText()) || !"".equals(TxtTelCliente.getText())) {
+
+            objCliente.setClienteCedula(TxtRncCliente.getText());
+            objCliente.setClienteNombre(TxtNombreCliente.getText());
+            objCliente.setClienteApellido(TxtApellidoCliente.getText());
+            objCliente.setClienteDireccion(TxtDirrCliente.getText());
+            objCliente.setClienteTelefono(TxtTelCliente.getText());
+
+            objClienteDAO.RegistrarCliente(objCliente);
+
+            JOptionPane.showMessageDialog(null, "Los Datos del cliente han sido guardado de manera correcta");
+
+        }//fin del if
+        else {
+
+            JOptionPane.showMessageDialog(null, "Hay campos vacios, debe llenar todos los campos");
+        }//fin del else
+
+        
+    }//GEN-LAST:event_BtnGuardarClienteActionPerformed
+
+    private void TxtNombreClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNombreClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtNombreClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1151,6 +1213,7 @@ public class SistemaG extends javax.swing.JFrame {
     private javax.swing.JLabel LbInventario;
     private javax.swing.JLabel LbNombre;
     private javax.swing.JLabel LbNombreCliente;
+    private javax.swing.JLabel LbNombreCliente1;
     private javax.swing.JLabel LbNombreSup;
     private javax.swing.JLabel LbPrecio;
     private javax.swing.JLabel LbPrecioProducto;
@@ -1171,6 +1234,7 @@ public class SistemaG extends javax.swing.JFrame {
     private javax.swing.JTable TblFactura;
     private javax.swing.JTable TblProductos;
     private javax.swing.JTable TblSuplidor;
+    private javax.swing.JTextField TxtApellidoCliente;
     private javax.swing.JTextField TxtCantProdFac;
     private javax.swing.JTextField TxtClienCedFac;
     private javax.swing.JTextField TxtCodProdFac;
