@@ -1,10 +1,12 @@
 
 package Modelo;
 
+import java.util.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class ClienteDAO {
@@ -63,6 +65,40 @@ public class ClienteDAO {
         
         
     }//fin del metodo
+    
+    public List ListarCliente(){
+        
+        List<Cliente> objClienteLista = new ArrayList();
+        
+        String sql = "SELECT *FROM cliente";
+        
+        try{
+            
+            con = objConexion.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                Cliente Lcliente = new Cliente();
+                Lcliente.setIdCliente(rs.getInt("idCliente"));
+                Lcliente.setClienteCedula(rs.getString("ClienteCedula"));
+                Lcliente.setClienteNombre(rs.getString("ClienteNombre"));
+                Lcliente.setClienteApellido(rs.getString("ClienteApellido"));
+                Lcliente.setClienteDireccion(rs.getString("ClienteDireccion"));
+                Lcliente.setClienteTelefono(rs.getString("ClienteTelefono"));
+                
+                objClienteLista.add(Lcliente);
+                
+            }
+            
+        }catch(SQLException e){
+            
+            JOptionPane.showMessageDialog(null, e.toString());
+            
+        }
+        
+        return objClienteLista;
+    }
     
     
     

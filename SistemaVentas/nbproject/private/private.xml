@@ -5,8 +5,9 @@
         <group>
             <file>file:/C:/Users/adm/Documents/GitHub/Proyectos/SistemaVentas/src/Modelo/Login.java</file>
             <file>file:/C:/Users/adm/Documents/GitHub/Proyectos/SistemaVentas/src/Modelo/LoginDAO.java</file>
-            <file>file:/C:/Users/adm/Documents/GitHub/Proyectos/SistemaVentas/src/Vista/LoginG.java</file>
-            <file>file:/C:/Users/adm/Documents/GitHub/Proyectos/SistemaVentas/src/Modelo/Conexion.java</file>
+            <file>file:/C:/Users/adm/Documents/GitHub/Proyectos/SistemaVentas/src/Modelo/ClienteDAO.java</file>
+            <file>file:/C:/Users/adm/Documents/GitHub/Proyectos/SistemaVentas/src/Modelo/Cliente.java</file>
+            <file>file:/C:/Users/adm/Documents/GitHub/Proyectos/SistemaVentas/src/Vista/SistemaG.java</file>
         </group>
     </open-files>
 </project-private>
