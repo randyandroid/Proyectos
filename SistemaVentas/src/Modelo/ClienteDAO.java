@@ -136,6 +136,44 @@ public class ClienteDAO {
     }
     
     
+    public boolean ModificarCliente(Cliente Acliente){
+
+        String sql = "UPDATE cliente SET ClienteCedula=?, ClienteNombre=?, ClienteApellido=?, ClienteDireccion=?,ClienteTelefono=? WHERE idCliente =?";
+       
+        try{
+            
+            ps = con.prepareStatement(sql);
+            ps.setString(1, Acliente.getClienteCedula());
+            ps.setString(2, Acliente.getClienteNombre());
+            ps.setString(3, Acliente.getClienteApellido());
+            ps.setString(4, Acliente.getClienteDireccion());
+            ps.setString(5, Acliente.getClienteTelefono());
+            ps.setInt(6, Acliente.getIdCliente());
+            
+            ps.execute();
+            
+            return true;
+        }catch(SQLException e){
+            
+            JOptionPane.showMessageDialog(null, e.toString());
+            return false;
+            
+        }//fin de la excepcion
+        
+        finally{
+            
+            try{
+               con.close();
+                
+            }catch(SQLException e){
+                
+                JOptionPane.showMessageDialog(null, e.toString());
+            }
+        }//fin del cierre de conexion
+        
+        
+    }
+    
     
     
 }

@@ -500,10 +500,20 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
         BtnActualizarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
         BtnActualizarCliente.setText("ACTUALIZAR");
         BtnActualizarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnActualizarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnActualizarClienteActionPerformed(evt);
+            }
+        });
 
         BtnCrearCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/nuevo.png"))); // NOI18N
         BtnCrearCliente.setText("NUEVO");
         BtnCrearCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnCrearCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCrearClienteActionPerformed(evt);
+            }
+        });
 
         BtnEliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
         BtnEliminarCliente.setText("ELIMINAR");
@@ -1252,6 +1262,54 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
         
     }//GEN-LAST:event_BtnEliminarClienteActionPerformed
 
+    private void BtnActualizarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnActualizarClienteActionPerformed
+        // TODO add your handling code here:
+        
+        if ("".equals(TxtCodigoCliente.getText())) {
+            
+            JOptionPane.showMessageDialog(null, "Debe Seleccionar un cliente");
+            
+            
+        }//fin del if
+        
+        else{ 
+            
+            
+            if(!"".equals(TxtRncCliente.getText()) && !"".equals(TxtNombreCliente.getText()) && !"".equals(TxtApellidoCliente.getText()) && !"".equals(TxtDirrCliente.getText()) && !"".equals(TxtTelCliente.getText()) ){
+                
+                objCliente.setClienteCedula(TxtRncCliente.getText());
+                objCliente.setClienteNombre(TxtNombreCliente.getText());
+                objCliente.setClienteApellido(TxtApellidoCliente.getText());
+                objCliente.setClienteDireccion(TxtDirrCliente.getText());
+                objCliente.setClienteTelefono(TxtTelCliente.getText());
+                objCliente.setIdCliente(Integer.parseInt(TxtCodigoCliente.getText()));
+                
+                
+            objClienteDAO.ModificarCliente(objCliente);
+            
+            LimpiarTabla();
+            LimpiarCliente();
+            ListarCliente();
+            
+            }//fin del if
+            
+            else{
+                
+                JOptionPane.showMessageDialog(null, "Hay campos vacios");
+                
+            }//fin del else
+            
+        }//fin del else
+        
+        
+    }//GEN-LAST:event_BtnActualizarClienteActionPerformed
+
+    private void BtnCrearClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCrearClienteActionPerformed
+        // TODO add your handling code here:
+        
+        LimpiarCliente();
+    }//GEN-LAST:event_BtnCrearClienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1405,7 +1463,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
     private LimpiarCliente(){
         
         TxtCodigoCliente.setText("");
-        TxtCedCliente.setText("");
+        TxtRncCliente.setText("");
         TxtNombreCliente.setText("");
         TxtApellidoCliente.setText("");
         TxtDirrCliente.setText("");
