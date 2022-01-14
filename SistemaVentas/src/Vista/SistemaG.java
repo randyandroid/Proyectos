@@ -29,6 +29,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
 
     public SistemaG() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     
@@ -127,6 +128,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
         BtnEliminarCliente = new javax.swing.JButton();
         LbNombreCliente1 = new javax.swing.JLabel();
         TxtNombreCliente = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         ContenedorProveedor = new javax.swing.JPanel();
         LbRncSup = new javax.swing.JLabel();
         TxtRncSup = new javax.swing.JTextField();
@@ -467,6 +469,11 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
                 return canEdit [columnIndex];
             }
         });
+        TblClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TblClientesMouseClicked(evt);
+            }
+        });
         ScrollCliente.setViewportView(TblClientes);
         if (TblClientes.getColumnModel().getColumnCount() > 0) {
             TblClientes.getColumnModel().getColumn(0).setResizable(false);
@@ -501,9 +508,14 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
         BtnEliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
         BtnEliminarCliente.setText("ELIMINAR");
         BtnEliminarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnEliminarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarClienteActionPerformed(evt);
+            }
+        });
 
         LbNombreCliente1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        LbNombreCliente1.setText("Apellido:");
+        LbNombreCliente1.setText("APELLIDO:");
 
         TxtNombreCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -551,9 +563,15 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
                         .addComponent(LbNombreCliente1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(TxtApellidoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(ScrollCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ContenedorClientesLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(ScrollCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(21, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorClientesLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5)
+                        .addGap(276, 276, 276))))
         );
         ContenedorClientesLayout.setVerticalGroup(
             ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -563,8 +581,13 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
                         .addGap(43, 43, 43)
                         .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(LbCodigoCliente)
-                            .addComponent(TxtCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(TxtCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(ContenedorClientesLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel5)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ContenedorClientesLayout.createSequentialGroup()
                         .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LbRncCliente)
                             .addComponent(TxtRncCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -587,14 +610,12 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
                         .addGap(18, 18, 18)
                         .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BtnGuardarCliente)
-                            .addComponent(BtnActualizarCliente)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorClientesLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(ScrollCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnCrearCliente)
-                    .addComponent(BtnEliminarCliente))
+                            .addComponent(BtnActualizarCliente))
+                        .addGap(18, 18, 18)
+                        .addGroup(ContenedorClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BtnCrearCliente)
+                            .addComponent(BtnEliminarCliente)))
+                    .addComponent(ScrollCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(jLabel9)
                 .addContainerGap(12, Short.MAX_VALUE))
@@ -1174,7 +1195,11 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
             objCliente.setClienteTelefono(TxtTelCliente.getText());
 
             objClienteDAO.RegistrarCliente(objCliente);
-
+              LimpiarTabla();
+              LimpiarCliente();
+              ListarCliente();
+              
+              
             JOptionPane.showMessageDialog(null, "Los Datos del cliente han sido guardado de manera correcta");
 
         }//fin del if
@@ -1189,6 +1214,43 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
     private void TxtNombreClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNombreClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtNombreClienteActionPerformed
+
+    private void TblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblClientesMouseClicked
+        // TODO add your handling code here:
+        
+        int ValorTabla = TblClientes.rowAtPoint(evt.getPoint());
+        
+        TxtCodigoCliente.setText(TblClientes.getValueAt(ValorTabla, 0).toString());
+        TxtRncCliente.setText(TblClientes.getValueAt(ValorTabla, 1).toString());
+        TxtNombreCliente.setText(TblClientes.getValueAt(ValorTabla, 2).toString());
+        TxtApellidoCliente.setText(TblClientes.getValueAt(ValorTabla, 3).toString());
+        TxtDirrCliente.setText(TblClientes.getValueAt(ValorTabla, 4).toString());
+        TxtTelCliente.setText(TblClientes.getValueAt(ValorTabla, 5).toString());
+       
+    }//GEN-LAST:event_TblClientesMouseClicked
+
+    private void BtnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarClienteActionPerformed
+        // TODO add your handling code here:
+        
+        if (!"".equals(TxtCodigoCliente.getText())) {
+            
+            int Confirmar = JOptionPane.showConfirmDialog(null, "Esta seguro que desea Borrar este Registro?");
+            
+            if (Confirmar == 0) {
+                
+                int id = Integer.parseInt(TxtCodigoCliente.getText());
+                objClienteDAO.EliminarCliente(id);
+                LimpiarTabla();
+                LimpiarCliente();
+                ListarCliente();
+               
+                
+            }
+            
+            
+        }
+        
+    }//GEN-LAST:event_BtnEliminarClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1327,6 +1389,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1336,4 +1399,21 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+
+    
+    private LimpiarCliente(){
+        
+        TxtCodigoCliente.setText("");
+        TxtCedCliente.setText("");
+        TxtNombreCliente.setText("");
+        TxtApellidoCliente.setText("");
+        TxtDirrCliente.setText("");
+        TxtTelCliente.setText("");
+        
+        
+    }
+
 }
+
+

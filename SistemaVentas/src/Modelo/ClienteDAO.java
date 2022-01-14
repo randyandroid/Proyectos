@@ -100,6 +100,42 @@ public class ClienteDAO {
         return objClienteLista;
     }
     
+    public boolean EliminarCliente(int idCliente) {
+
+        String sql = "DELETE FROM cliente WHERE idCliente = ?";
+
+        try {
+
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, idCliente);
+            ps.execute();
+
+            return true;
+
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(null, e.toString());
+
+            return false;
+        }//fin de la excepcion
+        finally {
+
+            try {
+
+                con.close();
+            } catch (SQLException ex) {
+
+                JOptionPane.showMessageDialog(null, ex.toString());
+
+            }
+
+        }//fin del finally
+
+        
+  
+    }
+    
+    
     
     
 }
