@@ -60,6 +60,31 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
         TblClientes.setModel(ModeloTabla);
         
     }//fin del metodo
+ 
+    
+       public void ListarProveedor(){
+        
+        List<Proveedor> objProveedorLista = objProveedorDAO.ListarProveedor();
+        ModeloTabla = (DefaultTableModel) TblSuplidor.getModel();
+        Object[] objx = new Object[5];
+        
+        for(int i=0; i<objProveedorLista.size(); i++){
+            
+            objx[0] = objProveedorLista.get(i).getIdProveedor();
+            objx[1] = objProveedorLista.get(i).getProveedorRnc();
+            objx[2] = objProveedorLista.get(i).getProveedorNombre();
+            objx[3] = objProveedorLista.get(i).getProveedorDireccion();
+            objx[4] = objProveedorLista.get(i).getProveedorTelefono();
+            
+            
+            ModeloTabla.addRow(objx);
+            
+        }//fin del for
+         
+        TblSuplidor.setModel(ModeloTabla);
+        
+    }//fin del metodo
+    
     
     
     public void LimpiarTabla(){
@@ -667,13 +692,18 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
                 "ID", "CED/RNC", "NOMBRE", "DIRECCION", "TELEFONO"
             }
         ));
+        TblSuplidor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TblSuplidorMouseClicked(evt);
+            }
+        });
         ScrollSuplidor.setViewportView(TblSuplidor);
         if (TblSuplidor.getColumnModel().getColumnCount() > 0) {
-            TblSuplidor.getColumnModel().getColumn(0).setPreferredWidth(60);
+            TblSuplidor.getColumnModel().getColumn(0).setPreferredWidth(40);
             TblSuplidor.getColumnModel().getColumn(1).setPreferredWidth(100);
             TblSuplidor.getColumnModel().getColumn(2).setPreferredWidth(100);
             TblSuplidor.getColumnModel().getColumn(3).setPreferredWidth(50);
-            TblSuplidor.getColumnModel().getColumn(4).setPreferredWidth(50);
+            TblSuplidor.getColumnModel().getColumn(4).setPreferredWidth(60);
         }
 
         BtnGuardarSup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/GuardarTodo.png"))); // NOI18N
@@ -696,6 +726,11 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
         BtnEliminarSup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
         BtnEliminarSup.setText("ELIMINAR");
         BtnEliminarSup.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnEliminarSup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarSupActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ContenedorProveedorLayout = new javax.swing.GroupLayout(ContenedorProveedor);
         ContenedorProveedor.setLayout(ContenedorProveedorLayout);
@@ -732,8 +767,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
                             .addComponent(BtnActualizarSup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(BtnEliminarSup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ScrollSuplidor, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addComponent(ScrollSuplidor, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE))
         );
         ContenedorProveedorLayout.setVerticalGroup(
             ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1141,6 +1175,11 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
 
     private void BtnSuplidorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSuplidorActionPerformed
         // TODO add your handling code here:
+        
+        LimpiarTabla();
+        ListarProveedor();
+        ContenedorPrincipal.setSelectedIndex(2);
+        
     }//GEN-LAST:event_BtnSuplidorActionPerformed
 
     private void BtnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnProductosActionPerformed
@@ -1334,6 +1373,10 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
             
             objProveedorDAO.RegistrarProveedor(objProveedor);
             
+            LimpiarTabla();
+            LimpiarProveedor();
+            ListarProveedor();
+            
             JOptionPane.showMessageDialog(null,"Los Datos fueron Guardados correctamente");
             
         }else{
@@ -1345,6 +1388,46 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
         
         
     }//GEN-LAST:event_BtnGuardarSupActionPerformed
+
+    private void TblSuplidorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblSuplidorMouseClicked
+        // TODO add your handling code here:
+        
+        int ValorTablaSup = TblSuplidor.rowAtPoint(evt.getPoint());
+        
+        
+       TxtCodigoSup.setText(TblSuplidor.getValueAt(ValorTablaSup, 0).toString());
+       TxtRncSup.setText(TblSuplidor.getValueAt(ValorTablaSup, 1).toString());
+       TxtNombreSup.setText(TblSuplidor.getValueAt(ValorTablaSup, 2).toString());
+       TxtDirrSup.setText(TblSuplidor.getValueAt(ValorTablaSup, 3).toString());
+       TxtTelefonoSup.setText(TblSuplidor.getValueAt(ValorTablaSup, 4).toString());
+        
+    }//GEN-LAST:event_TblSuplidorMouseClicked
+
+    private void BtnEliminarSupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarSupActionPerformed
+        // TODO add your handling code here:
+        
+     if (!"".equals(TxtCodigoSup.getText())) {
+            
+            int Confirmar = JOptionPane.showConfirmDialog(null, "Esta seguro que desea Borrar este Registro?");
+            
+            if (Confirmar == 0) {
+                
+                int id = Integer.parseInt(TxtCodigoSup.getText());
+                objProveedorDAO.EliminarProveedor(id);
+                
+                LimpiarProveedor();
+                LimpiarTabla();
+                ListarProveedor();
+               
+                
+            }
+            
+            
+        }
+        
+        
+        
+    }//GEN-LAST:event_BtnEliminarSupActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1508,6 +1591,18 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
         
     }
 
+private void LimpiarProveedor(){
+        
+        TxtCodigoSup.setText("");
+        TxtRncSup.setText("");
+        TxtNombreSup.setText("");
+        TxtDirrSup.setText("");
+        TxtTelefonoSup.setText("");
+       
+        
+        
+    }    
+    
 }
 
 

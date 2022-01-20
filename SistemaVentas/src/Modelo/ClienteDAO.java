@@ -89,7 +89,7 @@ public class ClienteDAO {
                 
                 objClienteLista.add(Lcliente);
                 
-            }
+            }//fin del while
             
         }catch(SQLException e){
             
