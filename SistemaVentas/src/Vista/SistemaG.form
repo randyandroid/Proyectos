@@ -51,7 +51,7 @@
                       <Component id="BtnProductos" alignment="0" max="32767" attributes="0"/>
                       <Component id="BtnNuevaVenta" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="29" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -517,7 +517,7 @@
                           <Group type="102" attributes="0">
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="ScrollCliente" min="-2" pref="508" max="-2" attributes="0"/>
-                              <EmptySpace pref="21" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
@@ -820,7 +820,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="LbTelSup" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="TxtTelefonoSup" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="TxtTelefonoSup" min="-2" pref="204" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -837,7 +837,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="ScrollSuplidor" min="-2" pref="508" max="-2" attributes="0"/>
-                      <EmptySpace pref="33" max="32767" attributes="0"/>
+                      <EmptySpace pref="24" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -884,7 +884,7 @@
                           </Group>
                           <Component id="ScrollSuplidor" alignment="0" min="-2" pref="216" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="81" max="32767" attributes="0"/>
+                      <EmptySpace pref="101" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1007,6 +1007,9 @@
                   <Color id="Hand Cursor"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnGuardarSupActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="BtnActualizarSup">
               <Properties>

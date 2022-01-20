@@ -7,6 +7,8 @@ package Vista;
 
 import Modelo.Cliente;
 import Modelo.ClienteDAO;
+import Modelo.Proveedor;
+import Modelo.ProveedorDAO;
 import java.util.List;
 
 
@@ -20,10 +22,13 @@ import javax.swing.table.DefaultTableModel;
 public class SistemaG extends javax.swing.JFrame {
 
     
-    //INSTANCIO
+    //INSTANCIAS
     
 Cliente objCliente = new Cliente();
 ClienteDAO objClienteDAO = new ClienteDAO();
+Proveedor objProveedor = new Proveedor();
+ProveedorDAO objProveedorDAO = new ProveedorDAO();
+
 DefaultTableModel ModeloTabla = new DefaultTableModel();
  
 
@@ -246,7 +251,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
                     .addComponent(BtnClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BtnProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BtnNuevaVenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelLateralLayout.setVerticalGroup(
             PanelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -577,7 +582,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
                     .addGroup(ContenedorClientesLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(ScrollCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(21, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorClientesLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel5)
@@ -674,6 +679,11 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
         BtnGuardarSup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/GuardarTodo.png"))); // NOI18N
         BtnGuardarSup.setText("GUARDAR");
         BtnGuardarSup.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnGuardarSup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarSupActionPerformed(evt);
+            }
+        });
 
         BtnActualizarSup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
         BtnActualizarSup.setText("ACTUALIZAR");
@@ -712,7 +722,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
                         .addGroup(ContenedorProveedorLayout.createSequentialGroup()
                             .addComponent(LbTelSup)
                             .addGap(18, 18, 18)
-                            .addComponent(TxtTelefonoSup, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(TxtTelefonoSup, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(ContenedorProveedorLayout.createSequentialGroup()
                         .addGroup(ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(BtnGuardarSup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -723,7 +733,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
                             .addComponent(BtnEliminarSup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ScrollSuplidor, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         ContenedorProveedorLayout.setVerticalGroup(
             ContenedorProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -759,7 +769,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
                             .addComponent(BtnCrearSup)
                             .addComponent(BtnEliminarSup)))
                     .addComponent(ScrollSuplidor, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         ContenedorPrincipal.addTab("Proveedores", ContenedorProveedor);
@@ -1196,7 +1206,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
     private void BtnGuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarClienteActionPerformed
         
         //VALIDO QUE LOS CAMPOS NO ESTEN VACIOS:
-        if (!"".equals(TxtRncCliente.getText()) || !"".equals(TxtApellidoCliente.getText()) || !"".equals(TxtDirrCliente.getText()) || !"".equals(TxtTelCliente.getText())) {
+        if (!"".equals(TxtRncCliente.getText()) && !"".equals(TxtApellidoCliente.getText()) && !"".equals(TxtDirrCliente.getText()) && !"".equals(TxtTelCliente.getText())) {
 
             objCliente.setClienteCedula(TxtRncCliente.getText());
             objCliente.setClienteNombre(TxtNombreCliente.getText());
@@ -1309,6 +1319,32 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
         
         LimpiarCliente();
     }//GEN-LAST:event_BtnCrearClienteActionPerformed
+
+    private void BtnGuardarSupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarSupActionPerformed
+        // TODO add your handling code here:
+        
+        //VALIDO QUE LOS CAMPOS NO ESTEN VACIOS
+        
+        if(!"".equals(TxtRncSup.getText()) && !"".equals(TxtNombreSup.getText()) && !"".equals(TxtDirrSup.getText()) && !"".equals(TxtTelefonoSup.getText())){
+            
+            objProveedor.setProveedorRnc(TxtRncSup.getText());
+            objProveedor.setProveedorNombre(TxtNombreSup.getText());
+            objProveedor.setProveedorDireccion(TxtDirrSup.getText());
+            objProveedor.setProveedorTelefono(TxtTelefonoSup.getText());
+            
+            objProveedorDAO.RegistrarProveedor(objProveedor);
+            
+            JOptionPane.showMessageDialog(null,"Los Datos fueron Guardados correctamente");
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "Hay Campos vacios, debe llenar todos los campos");
+            
+        }//fin del if else
+        
+        
+        
+        
+    }//GEN-LAST:event_BtnGuardarSupActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1460,7 +1496,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
 
 
     
-    private LimpiarCliente(){
+    private void LimpiarCliente(){
         
         TxtCodigoCliente.setText("");
         TxtRncCliente.setText("");
