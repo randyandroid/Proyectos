@@ -16,6 +16,8 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+import org.jdesktop.swingx.autocomplete.ObjectToStringConverter;
 
 /**
  *
@@ -40,7 +42,9 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
     public SistemaG() {
         initComponents();
         this.setLocationRelativeTo(null);
+        AutoCompleteDecorator.decorate(CbxProductoSuplidor);
         objProductoDAO.ConsultarProveedor(CbxProductoSuplidor);
+        
         
     }
 
@@ -220,7 +224,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
         LbPrecioProducto = new javax.swing.JLabel();
         TxtPrecioProd = new javax.swing.JTextField();
         BtnGuardarProducto = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        BtnActualizarProducto = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -919,22 +923,32 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
             }
         });
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
-        jButton8.setText("ACTUALIZAR");
-        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        BtnActualizarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
+        BtnActualizarProducto.setText("ACTUALIZAR");
+        BtnActualizarProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnActualizarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                BtnActualizarProductoActionPerformed(evt);
             }
         });
 
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/nuevo.png"))); // NOI18N
         jButton9.setText("NUEVO");
         jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
         jButton10.setText("ELIMINAR");
         jButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel1.setText("INVENTARIO");
@@ -955,6 +969,11 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
                 return canEdit [columnIndex];
             }
         });
+        TblProductos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TblProductosMouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(TblProductos);
         if (TblProductos.getColumnModel().getColumnCount() > 0) {
             TblProductos.getColumnModel().getColumn(0).setPreferredWidth(30);
@@ -969,7 +988,8 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/excel.png"))); // NOI18N
         jButton1.setText("EXPORTAR");
 
-        CbxProductoSuplidor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
+        CbxProductoSuplidor.setEditable(true);
+        CbxProductoSuplidor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -981,7 +1001,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8)
+                        .addComponent(BtnActualizarProducto)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
@@ -996,12 +1016,15 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
                                     .addGroup(jPanel9Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                                .addComponent(TxtCodigoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(23, 23, 23)
-                                                .addComponent(TxtidProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addComponent(TxtDescripcionProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                            .addComponent(TxtStockProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(TxtStockProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                                        .addComponent(TxtCodigoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(23, 23, 23)
+                                                        .addComponent(TxtidProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGap(0, 0, Short.MAX_VALUE))))
                                     .addGroup(jPanel9Layout.createSequentialGroup()
                                         .addGap(12, 12, 12)
                                         .addComponent(CbxProductoSuplidor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -1030,7 +1053,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(69, 69, 69)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton8)
+                            .addComponent(BtnActualizarProducto)
                             .addComponent(jButton1)
                             .addComponent(jButton9)))
                     .addGroup(jPanel9Layout.createSequentialGroup()
@@ -1261,6 +1284,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
         
         LimpiarTabla();
         ListarProveedor();
+        
        ContenedorPrincipal.setSelectedIndex(2);
         
     }//GEN-LAST:event_BtnSuplidorActionPerformed
@@ -1293,9 +1317,55 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtNombreSupActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void BtnActualizarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnActualizarProductoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+        
+        if ("".equals(TxtidProducto.getText())) {
+            
+            JOptionPane.showMessageDialog(null, "Debe Seleccionar un Producto");
+            
+            
+        }//fin del if
+        
+        else{ 
+            
+            
+            if(!"".equals(TxtCodigoProd.getText()) && !"".equals(TxtDescripcionProducto.getText()) && !"".equals(CbxProductoSuplidor.getSelectedIndex()) && !"".equals(TxtCostoProducto.getText()) && !"".equals(TxtPrecioProd.getText()) && !"".equals(TxtStockProducto.getText()) ){
+                
+                objProducto.setProductoCodigo(TxtCodigoProd.getText());
+                objProducto.setProductoNombre(TxtDescripcionProducto.getText());
+                objProducto.setProductoProveedor(CbxProductoSuplidor.getSelectedItem().toString());
+                objProducto.setProductoCosto((int) Double.parseDouble(TxtCostoProducto.getText()));
+                objProducto.setProductoPrecio((int) Double.parseDouble(TxtPrecioProd.getText()));
+                objProducto.setProductoStock(Integer.parseInt(TxtStockProducto.getText()));
+                objProducto.setIdProducto(Integer.parseInt(TxtidProducto.getText()));
+                
+             
+                objProductoDAO.ModificarProducto(objProducto);
+                
+            
+            LimpiarTabla();
+            ListarProducto();
+            LimpiarProducto();
+            
+            
+            }//fin del if
+            
+            else{
+                
+                JOptionPane.showMessageDialog(null, "Hay campos vacios");
+                
+            }//fin del else
+            
+        }//fin del else
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_BtnActualizarProductoActionPerformed
 
     private void TxtCostoProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCostoProductoActionPerformed
         // TODO add your handling code here:
@@ -1590,7 +1660,8 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
             objProductoDAO.RegistrarProducto(objProducto);
             
             LimpiarTabla();
-           
+           ListarProducto();
+           LimpiarProducto();
            
             
             JOptionPane.showMessageDialog(null,"Los Datos fueron Guardados correctamente");
@@ -1604,6 +1675,60 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
         
         
     }//GEN-LAST:event_BtnGuardarProductoActionPerformed
+
+    private void TblProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblProductosMouseClicked
+        // TODO add your handling code here:
+        
+        
+         int ValorTablaProd = TblProductos.rowAtPoint(evt.getPoint());
+        
+        
+       TxtidProducto.setText(TblProductos.getValueAt(ValorTablaProd, 0).toString());
+       TxtCodigoProd.setText(TblProductos.getValueAt(ValorTablaProd, 1).toString());
+       TxtDescripcionProducto.setText(TblProductos.getValueAt(ValorTablaProd, 2).toString());
+       CbxProductoSuplidor.setSelectedItem(TblProductos.getValueAt(ValorTablaProd, 3).toString());
+       TxtCostoProducto.setText(TblProductos.getValueAt(ValorTablaProd, 4).toString());
+       TxtPrecioProd.setText(TblProductos.getValueAt(ValorTablaProd, 5).toString());
+       TxtStockProducto.setText(TblProductos.getValueAt(ValorTablaProd,6).toString());
+        
+                                           
+
+        
+        
+        
+    }//GEN-LAST:event_TblProductosMouseClicked
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        
+        if (!"".equals(TxtidProducto.getText())) {
+            
+            int Confirmar = JOptionPane.showConfirmDialog(null, "Esta seguro que desea Borrar este Registro?");
+            
+            if (Confirmar == 0) {
+                
+                int id = Integer.parseInt(TxtidProducto.getText());
+                objProductoDAO.EliminarProducto(id);
+                
+                LimpiarTabla();
+                ListarProducto();
+                ListarProducto();
+                              
+               
+             
+            }
+            
+            
+        
+        }
+        
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        
+        LimpiarProducto();
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1643,6 +1768,7 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnActualizarCliente;
+    private javax.swing.JButton BtnActualizarProducto;
     private javax.swing.JButton BtnActualizarSup;
     private javax.swing.JButton BtnClientes;
     private javax.swing.JButton BtnConfiguracion;
@@ -1738,7 +1864,6 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -1776,9 +1901,22 @@ private void LimpiarProveedor(){
         TxtDirrSup.setText("");
         TxtTelefonoSup.setText("");
        
-        
-        
-    }    
+       
+    }  
+
+
+private void LimpiarProducto(){
+    
+    TxtidProducto.setText("");
+    TxtCodigoProd.setText("");
+    TxtDescripcionProducto.setText("");
+    TxtCostoProducto.setText("");
+    TxtPrecioProd.setText("");
+    TxtStockProducto.setText("");
+    CbxProductoSuplidor.setSelectedItem("");
+    
+}
+
     
 }
 

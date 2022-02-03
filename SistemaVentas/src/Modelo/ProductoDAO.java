@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComboBox;
 
 
@@ -133,5 +135,91 @@ public class ProductoDAO {
     
     }
     
+    public boolean EliminarProducto(int idProducto){
+        
+        String sql = "DELETE FROM producto WHERE idProducto = ?";
+        
+        try{
+            
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, idProducto);
+            ps.execute();
+            
+            return true;
+            
+            
+        
+        }catch(SQLException e){
+            
+            JOptionPane.showMessageDialog(null, e.toString());
+            
+            return false;
+            
+        }//fin del try catch
+        
+        finally{
+            
+            try{
+                con.close();
+            } catch (SQLException ex)  {
+                
+                Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }//fin dell finally
+        
+        
+    }
+    
+    
+    public boolean ModificarProducto(Producto Mproducto){
+        
+        String sql = "UPDATE  producto SET ProductoCodigo =?,  ProductoNombre = ?, ProductoCosto =?, ProductoPrecio = ?, ProductoStock =?, ProductoProveedor =? WHERE idProducto=?";
+        
+        
+        try{
+            
+         ps=   con.prepareStatement(sql);
+         
+            ps.setString(1, Mproducto.getProductoCodigo());
+            ps.setString(2, Mproducto.getProductoNombre());
+            ps.setDouble(3, Mproducto.getProductoCosto());
+            ps.setDouble(4, Mproducto.getProductoPrecio());
+            ps.setInt(5, Mproducto.getProductoStock());
+            ps.setString(6, Mproducto.getProductoProveedor());
+            ps.setInt(7, Mproducto.getIdProducto());
+        
+            ps.execute();
+            
+            return true;
+        
+        }catch(SQLException e){
+            
+            JOptionPane.showMessageDialog(null, e.toString());
+            
+            return false;
+            
+            
+        }//fin del try catch
+        
+        finally{
+            
+            try{
+                
+                con.close();
+                
+            }catch(SQLException e){
+                
+                JOptionPane.showMessageDialog(null, e.toString());
+            }
+        }//fin del finally
+        
+        
+        
+    }
+
+
+
+
     
 }

@@ -1107,7 +1107,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jButton9" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BtnActualizarProducto" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jButton1" min="-2" pref="128" max="-2" attributes="0"/>
                               </Group>
@@ -1124,13 +1124,18 @@
                                               <Group type="102" attributes="0">
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" attributes="0">
-                                                          <Component id="TxtCodigoProd" min="-2" pref="63" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                                          <Component id="TxtidProducto" min="-2" pref="17" max="-2" attributes="0"/>
-                                                      </Group>
                                                       <Component id="TxtDescripcionProducto" pref="200" max="32767" attributes="0"/>
-                                                      <Component id="TxtStockProducto" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
+                                                      <Group type="102" attributes="0">
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Component id="TxtStockProducto" min="-2" pref="85" max="-2" attributes="0"/>
+                                                              <Group type="102" alignment="0" attributes="0">
+                                                                  <Component id="TxtCodigoProd" min="-2" pref="63" max="-2" attributes="0"/>
+                                                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                                                  <Component id="TxtidProducto" min="-2" pref="40" max="-2" attributes="0"/>
+                                                              </Group>
+                                                          </Group>
+                                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                      </Group>
                                                   </Group>
                                               </Group>
                                               <Group type="102" attributes="0">
@@ -1173,7 +1178,7 @@
                                   <Component id="jScrollPane4" min="-2" pref="216" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="BtnActualizarProducto" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jButton9" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -1298,7 +1303,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnGuardarProductoActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton8">
+                <Component class="javax.swing.JButton" name="BtnActualizarProducto">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Img/Actualizar (2).png"/>
@@ -1309,7 +1314,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnActualizarProductoActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton9">
@@ -1322,6 +1327,9 @@
                       <Color id="Hand Cursor"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton10">
                   <Properties>
@@ -1333,6 +1341,9 @@
                       <Color id="Hand Cursor"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton10ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel1">
                   <Properties>
@@ -1407,6 +1418,9 @@
                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TblProductosMouseClicked"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -1422,9 +1436,10 @@
                 </Component>
                 <Component class="javax.swing.JComboBox" name="CbxProductoSuplidor">
                   <Properties>
+                    <Property name="editable" type="boolean" value="true"/>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
-                        <StringItem index="0" value="Seleccionar"/>
+                        <StringItem index="0" value=""/>
                       </StringArray>
                     </Property>
                   </Properties>
