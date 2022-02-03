@@ -11,6 +11,7 @@ import Modelo.Producto;
 import Modelo.ProductoDAO;
 import Modelo.Proveedor;
 import Modelo.ProveedorDAO;
+import Reportes.Excel;
 import java.util.List;
 
 
@@ -987,6 +988,11 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/excel.png"))); // NOI18N
         jButton1.setText("EXPORTAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         CbxProductoSuplidor.setEditable(true);
         CbxProductoSuplidor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
@@ -1729,6 +1735,14 @@ DefaultTableModel ModeloTabla = new DefaultTableModel();
         
         LimpiarProducto();
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+       
+        Excel.reporte();
+       
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
