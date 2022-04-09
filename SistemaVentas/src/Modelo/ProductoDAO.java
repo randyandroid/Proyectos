@@ -219,6 +219,46 @@ public class ProductoDAO {
     }
 
 
+    
+    public  Producto BuscarProducto(String Cproducto){
+        
+        Producto Bproducto = new Producto();
+        
+        String sql = "SELECT  * FROM producto WHERE ProductoCodigo =?";
+        
+        try{
+            
+            con = ObjConexion.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, Cproducto);
+           rs= ps.executeQuery();
+            
+            if(rs.next()){
+                
+                Bproducto.setProductoNombre(rs.getString("ProductoNombre"));
+                Bproducto.setProductoPrecio((int) rs.getDouble("ProductoPrecio"));
+                Bproducto.setProductoStock(rs.getInt("ProductoStock"));
+                
+                
+            }//fin del if
+            
+        }catch(SQLException e){
+            
+            JOptionPane.showMessageDialog(null, e.toString());
+            
+        }//fin try catch
+        
+        return Bproducto;
+    }
+        
+        
+        public void PruebaClase(){
+            
+            
+            
+        }
+        
+    
 
 
     
