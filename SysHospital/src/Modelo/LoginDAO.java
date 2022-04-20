@@ -16,6 +16,52 @@ public class LoginDAO {
     ResultSet rs;
     Conexion objConexion = new Conexion();
     
+    
+    
+    public boolean RegistrarUsuario(Login Nlogin) {
+
+        String sql = "INSERT INTO usuario (UsuarioNombre,UsuarioUser,UsuarioClave,UsuarioTipo) VALUES (?,?,?,?)";
+
+        try{
+                
+            con = objConexion.getConnection();
+            ps  = con.prepareStatement(sql);
+            
+            ps.setString(1, Nlogin.getNombre());
+            ps.setString(2, Nlogin.getUser());
+            ps.setString(3, Nlogin.getClave());
+            ps.setString(4, Nlogin.getUsuarioTipo());
+            
+            ps.execute();
+            
+            return true;
+            
+            
+        } catch (SQLException e){
+            
+            JOptionPane.showMessageDialog(null, e.toString());
+
+            return false;
+            
+        }//fin del try catch
+        
+        finally{
+            
+            try{
+                 con.close();
+                
+            }catch(SQLException e){
+                 
+                        JOptionPane.showMessageDialog(null, e.toString());
+                
+            }//fin del try catch
+            
+        } //fin del finally
+
+    }//fin del metodo
+    
+    
+    
     public Login Iniciar(String User, String Clave){
         
         Login objLogin = new Login();

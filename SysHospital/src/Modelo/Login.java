@@ -8,17 +8,20 @@ public class Login {
     private String Nombre;
     private String User;
     private String Clave;
+    private String UsuarioTipo;
 
     
     
     public Login() {
     }
 
-    public Login(int Id, String Nombre, String User, String Clave) {
+    public Login(int Id, String Nombre, String User, String Clave, String UsuarioTipo) {
         this.Id = Id;
         this.Nombre = Nombre;
         this.User = User;
         this.Clave = Clave;
+        this.UsuarioTipo = UsuarioTipo;
+        
     }
 
     public int getId() {
@@ -51,6 +54,14 @@ public class Login {
 
     public void setClave(String Clave) {
         this.Clave = Clave;
+    }
+
+    public String getUsuarioTipo() {
+        return UsuarioTipo;
+    }
+
+    public void setUsuarioTipo(String UsuarioTipo) {
+        this.UsuarioTipo = UsuarioTipo;
     }
     
     

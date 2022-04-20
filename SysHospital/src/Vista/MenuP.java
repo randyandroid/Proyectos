@@ -170,6 +170,9 @@ public class MenuP extends javax.swing.JFrame {
 
     private void MenuCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCrearUsuarioActionPerformed
         // TODO add your handling code here:
+         RegistroUsuario objRegistroUsuario = new RegistroUsuario();
+         objRegistroUsuario.setVisible(true);
+         
     }//GEN-LAST:event_MenuCrearUsuarioActionPerformed
 
     private void MenuCambiarClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCambiarClaveActionPerformed
