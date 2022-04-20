@@ -16,6 +16,9 @@ public class MenuP extends javax.swing.JFrame {
      */
     public MenuP() {
         initComponents();
+        
+        this.setExtendedState(MAXIMIZED_BOTH); //maximizo la ventana
+        
     }
 
     /**

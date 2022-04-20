@@ -50,6 +50,8 @@ public class RegistroUsuario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        fondo.setMaximumSize(new java.awt.Dimension(1280, 720));
+        fondo.setMinimumSize(new java.awt.Dimension(300, 300));
         fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         NombreRegristro.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -74,8 +76,8 @@ public class RegistroUsuario extends javax.swing.JFrame {
 
         xxx.setFont(new java.awt.Font("Bodoni MT", 1, 36)); // NOI18N
         xxx.setForeground(new java.awt.Color(0, 0, 0));
-        xxx.setText("Registro ");
-        fondo.add(xxx, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, -1, -1));
+        xxx.setText("Registro Usuario");
+        fondo.add(xxx, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 310, -1));
 
         TxtUsuarioUser.setBackground(new java.awt.Color(255, 255, 255));
         TxtUsuarioUser.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -116,7 +118,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
                 BtnUsuarioSalirActionPerformed(evt);
             }
         });
-        fondo.add(BtnUsuarioSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 110, 30));
+        fondo.add(BtnUsuarioSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 110, 30));
 
         TxtUsuarioPassword.setBackground(new java.awt.Color(255, 255, 255));
         TxtUsuarioPassword.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -124,7 +126,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
         fondo.add(TxtUsuarioPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 220, -1));
 
         CbxUsuarioTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Administrador", "Usuario" }));
-        fondo.add(CbxUsuarioTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 130, 30));
+        fondo.add(CbxUsuarioTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 130, 30));
 
         NombreRegristro4.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         NombreRegristro4.setForeground(new java.awt.Color(0, 0, 0));
@@ -136,7 +138,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 988, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 996, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
