@@ -28,7 +28,6 @@ public class MenuP extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelPrincipal = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         MenuPrincipal = new javax.swing.JMenuBar();
         MenuAdm = new javax.swing.JMenu();
         MenuSeg = new javax.swing.JMenu();
@@ -52,23 +51,15 @@ public class MenuP extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("jButton1");
-
         javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
         PanelPrincipal.setLayout(PanelPrincipalLayout);
         PanelPrincipalLayout.setHorizontalGroup(
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                .addGap(185, 185, 185)
-                .addComponent(jButton1)
-                .addContainerGap(761, Short.MAX_VALUE))
+            .addGap(0, 1019, Short.MAX_VALUE)
         );
         PanelPrincipalLayout.setVerticalGroup(
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(jButton1)
-                .addContainerGap(402, Short.MAX_VALUE))
+            .addGap(0, 547, Short.MAX_VALUE)
         );
 
         MenuAdm.setText("Administracion");
@@ -254,7 +245,6 @@ public class MenuP extends javax.swing.JFrame {
     private javax.swing.JMenu MenuTurnos;
     private javax.swing.JMenuItem MenuVerUsuario;
     private javax.swing.JPanel PanelPrincipal;
-    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
