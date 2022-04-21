@@ -15,7 +15,9 @@ public class MenuP extends javax.swing.JFrame {
      * Creates new form MenuP
      */
     public MenuP() {
+      
         initComponents();
+        this.setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**

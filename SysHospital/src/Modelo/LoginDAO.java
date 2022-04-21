@@ -58,7 +58,32 @@ public class LoginDAO {
             
         } //fin del finally
 
-    }//fin del metodo
+    }//fin del metodo registrar
+    
+    public int ConsultarUsuario(String Usuario){
+        
+        String sql = "SELECT count (idUsuario) FROM usuario WHERE UsuarioNombre = ?";
+        
+        try{
+            
+            ps = con.prepareStatement(sql);
+            ps.setString(1, Usuario);
+           rs =  ps.executeQuery();
+           
+           if(rs.next()){
+           
+               return rs.getInt(1);
+           }
+           
+           return 1;
+            
+        }catch(SQLException e){
+             JOptionPane.showMessageDialog(null, e.toString());
+            
+            return 1;
+        }
+        
+    }//fin del metodo consultarUsuario
     
     
     

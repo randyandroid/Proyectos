@@ -172,6 +172,14 @@ public class RegistroUsuario extends javax.swing.JFrame {
         String pass = new String(TxtUsuarioPassword.getPassword()); //obtengo contraseña
         String passCon = new String(TxtUsuarioNuevaPassword.getPassword());//obtengo confirmacion de contraseña
 
+        //valido que no hayan campos vacios
+        if(TxtUsuarioNombre.getText().equals(" ") ||pass.equals(" ")|| passCon.equals(" ") || TxtUsuarioUser.getText().equals("") ||CbxUsuarioTipo.getSelectedItem().equals(" ")){
+            
+            JOptionPane.showMessageDialog(null, "Hay campos vacios, debe llenar todos los campos");
+            
+        }//fin if validar campos vacios
+        else{
+        
         if(pass.equals(passCon)){
             
             objLogin.setNombre(TxtUsuarioNombre.getText());
@@ -191,7 +199,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
         }//fin else validar password
         
-            
+        }//fin else validar campos vacios    
        
     }//GEN-LAST:event_BtnUsuarioRegistrarActionPerformed
 
