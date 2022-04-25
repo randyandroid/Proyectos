@@ -74,8 +74,8 @@ public class LoginG extends javax.swing.JFrame {
 
         LabelUsuario.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LabelUsuario.setForeground(new java.awt.Color(102, 102, 102));
-        LabelUsuario.setText("User:");
-        getContentPane().add(LabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 50, 20));
+        LabelUsuario.setText("Usuario :");
+        getContentPane().add(LabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 90, 20));
 
         TxtUsuario.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         TxtUsuario.setForeground(new java.awt.Color(51, 51, 51));
@@ -93,8 +93,8 @@ public class LoginG extends javax.swing.JFrame {
 
         LabelClave.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LabelClave.setForeground(new java.awt.Color(102, 102, 102));
-        LabelClave.setText("Password:");
-        getContentPane().add(LabelClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 100, 30));
+        LabelClave.setText("Contraseña :");
+        getContentPane().add(LabelClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 110, 30));
 
         TXtClave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,7 +110,7 @@ public class LoginG extends javax.swing.JFrame {
 
         BtnIniciarLog.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         BtnIniciarLog.setForeground(new java.awt.Color(51, 51, 51));
-        BtnIniciarLog.setText("Sign in");
+        BtnIniciarLog.setText("Acceder");
         BtnIniciarLog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnIniciarLogActionPerformed(evt);
@@ -125,7 +125,7 @@ public class LoginG extends javax.swing.JFrame {
 
         BotonSalir.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         BotonSalir.setForeground(new java.awt.Color(255, 51, 0));
-        BotonSalir.setText("Exit");
+        BotonSalir.setText("Cerrar");
         BotonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonSalirActionPerformed(evt);

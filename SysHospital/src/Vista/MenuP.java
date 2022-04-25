@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import java.awt.BorderLayout;
+
 /**
  *
  * @author adm
@@ -32,7 +34,22 @@ public class MenuP extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelPrincipal = new javax.swing.JPanel();
+        BotonDoctor = new javax.swing.JButton();
+        BotonPacientes = new javax.swing.JButton();
+        BotonCitas = new javax.swing.JButton();
+        BotonCerrar = new javax.swing.JButton();
+        FondoMenu = new javax.swing.JLabel();
         MenuPrincipal = new javax.swing.JMenuBar();
+        MenuVer = new javax.swing.JMenu();
+        MenuPaciente = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        MenuMedicos = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        MenuTurnos = new javax.swing.JMenu();
         MenuAdm = new javax.swing.JMenu();
         MenuSeg = new javax.swing.JMenu();
         MenuCrearUsuario = new javax.swing.JMenuItem();
@@ -41,19 +58,11 @@ public class MenuP extends javax.swing.JFrame {
         MenuEditarUsuario = new javax.swing.JMenuItem();
         MenuCambiarClave = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        MenuMedicos = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        MenuPaciente = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        MenuTurnos = new javax.swing.JMenu();
-        MenuReportes = new javax.swing.JMenu();
         MenuAcercade = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
         PanelPrincipal.setLayout(PanelPrincipalLayout);
@@ -66,6 +75,132 @@ public class MenuP extends javax.swing.JFrame {
             .addGap(0, 547, Short.MAX_VALUE)
         );
 
+        getContentPane().add(PanelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1634, 982, -1, -1));
+
+        BotonDoctor.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        BotonDoctor.setForeground(new java.awt.Color(0, 0, 0));
+        BotonDoctor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/DoctorM.png"))); // NOI18N
+        BotonDoctor.setText("Médicos");
+        BotonDoctor.setContentAreaFilled(false);
+        BotonDoctor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BotonDoctor.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/DoctorP.png"))); // NOI18N
+        BotonDoctor.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/DoctorM.png"))); // NOI18N
+        BotonDoctor.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        BotonDoctor.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BotonDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonDoctorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BotonDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 140, 260, -1));
+
+        BotonPacientes.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        BotonPacientes.setForeground(new java.awt.Color(0, 0, 0));
+        BotonPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Paciente M.png"))); // NOI18N
+        BotonPacientes.setText("Pacientes");
+        BotonPacientes.setToolTipText("");
+        BotonPacientes.setContentAreaFilled(false);
+        BotonPacientes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BotonPacientes.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Paciente P.png"))); // NOI18N
+        BotonPacientes.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Paciente M.png"))); // NOI18N
+        BotonPacientes.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        BotonPacientes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BotonPacientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonPacientesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BotonPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 260, -1));
+
+        BotonCitas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        BotonCitas.setForeground(new java.awt.Color(0, 0, 0));
+        BotonCitas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CitaP.png"))); // NOI18N
+        BotonCitas.setText("Citas");
+        BotonCitas.setToolTipText("");
+        BotonCitas.setContentAreaFilled(false);
+        BotonCitas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BotonCitas.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Citapp.png"))); // NOI18N
+        BotonCitas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CitaP.png"))); // NOI18N
+        BotonCitas.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        BotonCitas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BotonCitas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCitasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BotonCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 510, 260, -1));
+
+        BotonCerrar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        BotonCerrar.setForeground(new java.awt.Color(0, 0, 0));
+        BotonCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CerrarN.png"))); // NOI18N
+        BotonCerrar.setText("Cerrar Sesión");
+        BotonCerrar.setToolTipText("");
+        BotonCerrar.setContentAreaFilled(false);
+        BotonCerrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BotonCerrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarP.png"))); // NOI18N
+        BotonCerrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CerrarM.png"))); // NOI18N
+        BotonCerrar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        BotonCerrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        BotonCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCerrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BotonCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 510, 260, -1));
+
+        FondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondoblancooo.jpg"))); // NOI18N
+        getContentPane().add(FondoMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        MenuPrincipal.setBackground(new java.awt.Color(204, 255, 255));
+        MenuPrincipal.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+
+        MenuVer.setBackground(new java.awt.Color(204, 255, 255));
+        MenuVer.setForeground(new java.awt.Color(0, 0, 0));
+        MenuVer.setText("Ver");
+
+        MenuPaciente.setText("Pacientes");
+
+        jMenuItem4.setText("Registrar Paciente");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        MenuPaciente.add(jMenuItem4);
+
+        jMenuItem5.setText("Ver Pacientes");
+        MenuPaciente.add(jMenuItem5);
+
+        jMenuItem6.setText("Historial clinico");
+        MenuPaciente.add(jMenuItem6);
+
+        MenuVer.add(MenuPaciente);
+
+        MenuMedicos.setText("Medicos");
+
+        jMenuItem1.setText("Registrar Medicos");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        MenuMedicos.add(jMenuItem1);
+
+        jMenuItem2.setText("Ver Medicos");
+        MenuMedicos.add(jMenuItem2);
+
+        jMenuItem3.setText("Disponibilidad  de Medicos");
+        MenuMedicos.add(jMenuItem3);
+
+        MenuVer.add(MenuMedicos);
+
+        MenuTurnos.setText("Citas");
+        MenuVer.add(MenuTurnos);
+
+        MenuPrincipal.add(MenuVer);
+
+        MenuAdm.setBackground(new java.awt.Color(204, 255, 255));
+        MenuAdm.setForeground(new java.awt.Color(0, 0, 0));
         MenuAdm.setText("Administracion");
 
         MenuSeg.setText("Control & Seguridad");
@@ -112,62 +247,21 @@ public class MenuP extends javax.swing.JFrame {
 
         MenuPrincipal.add(MenuAdm);
 
-        MenuMedicos.setText("Medicos");
+        MenuAcercade.setBackground(new java.awt.Color(204, 255, 255));
+        MenuAcercade.setForeground(new java.awt.Color(0, 0, 0));
+        MenuAcercade.setText("Ayuda");
 
-        jMenuItem1.setText("Registrar Medicos");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem7.setText("Acerca de");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jMenuItem7ActionPerformed(evt);
             }
         });
-        MenuMedicos.add(jMenuItem1);
+        MenuAcercade.add(jMenuItem7);
 
-        jMenuItem2.setText("Ver Medicos");
-        MenuMedicos.add(jMenuItem2);
-
-        jMenuItem3.setText("Disponibilidad  de Medicos");
-        MenuMedicos.add(jMenuItem3);
-
-        MenuPrincipal.add(MenuMedicos);
-
-        MenuPaciente.setText("Pacientes");
-
-        jMenuItem4.setText("Registrar Paciente");
-        MenuPaciente.add(jMenuItem4);
-
-        jMenuItem5.setText("Ver Pacientes");
-        MenuPaciente.add(jMenuItem5);
-
-        jMenuItem6.setText("Historial clinico");
-        MenuPaciente.add(jMenuItem6);
-
-        MenuPrincipal.add(MenuPaciente);
-
-        MenuTurnos.setText("Turnos & Citas");
-        MenuPrincipal.add(MenuTurnos);
-
-        MenuReportes.setText("Reportes");
-        MenuPrincipal.add(MenuReportes);
-
-        MenuAcercade.setText("Acerca de");
         MenuPrincipal.add(MenuAcercade);
 
         setJMenuBar(MenuPrincipal);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(PanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(PanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -176,7 +270,7 @@ public class MenuP extends javax.swing.JFrame {
         // TODO add your handling code here:
          RegistroUsuario objRegistroUsuario = new RegistroUsuario();
          objRegistroUsuario.setVisible(true);
-         
+         dispose();
     }//GEN-LAST:event_MenuCrearUsuarioActionPerformed
 
     private void MenuCambiarClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCambiarClaveActionPerformed
@@ -188,12 +282,48 @@ public class MenuP extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuPermisosUsuarioActionPerformed
 
     private void MenuVerUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuVerUsuarioActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_MenuVerUsuarioActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
+   
+           
+            
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void BotonDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonDoctorActionPerformed
+         Medicos me = new Medicos();
+           me.setVisible(true);
+           dispose();
+    }//GEN-LAST:event_BotonDoctorActionPerformed
+
+    private void BotonPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPacientesActionPerformed
+        Paciente pa = new Paciente();
+           pa.setVisible(true);
+           dispose();
+    }//GEN-LAST:event_BotonPacientesActionPerformed
+
+    private void BotonCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCitasActionPerformed
+         Citas ci = new Citas();
+           ci.setVisible(true);
+           dispose();
+    }//GEN-LAST:event_BotonCitasActionPerformed
+
+    private void BotonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarActionPerformed
+        LoginG objLoginG = new LoginG();
+           objLoginG.setVisible(true);
+           dispose();
+    }//GEN-LAST:event_BotonCerrarActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        Acerca objAcercaP = new Acerca();
+           objAcercaP.setVisible(true);
+           
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,6 +368,11 @@ public class MenuP extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonCerrar;
+    private javax.swing.JButton BotonCitas;
+    private javax.swing.JButton BotonDoctor;
+    private javax.swing.JButton BotonPacientes;
+    private javax.swing.JLabel FondoMenu;
     private javax.swing.JMenu MenuAcercade;
     private javax.swing.JMenu MenuAdm;
     private javax.swing.JMenuItem MenuCambiarClave;
@@ -247,9 +382,9 @@ public class MenuP extends javax.swing.JFrame {
     private javax.swing.JMenu MenuPaciente;
     private javax.swing.JMenuItem MenuPermisosUsuario;
     private javax.swing.JMenuBar MenuPrincipal;
-    private javax.swing.JMenu MenuReportes;
     private javax.swing.JMenu MenuSeg;
     private javax.swing.JMenu MenuTurnos;
+    private javax.swing.JMenu MenuVer;
     private javax.swing.JMenuItem MenuVerUsuario;
     private javax.swing.JPanel PanelPrincipal;
     private javax.swing.JMenu jMenu1;
@@ -259,5 +394,6 @@ public class MenuP extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     // End of variables declaration//GEN-END:variables
 }
