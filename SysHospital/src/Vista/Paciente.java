@@ -220,6 +220,9 @@ public class Paciente extends javax.swing.JFrame {
 
     private void BotonPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPacienteActionPerformed
       VerPaciente pa = new VerPaciente ();
+     
+    
+      
         pa.setSize(1070, 550);
         pa.setLocation(0, 0);
 
@@ -228,6 +231,8 @@ public class Paciente extends javax.swing.JFrame {
         
         Contenedor.revalidate();
         Contenedor.repaint();
+        
+        
     }//GEN-LAST:event_BotonPacienteActionPerformed
 
     /**
