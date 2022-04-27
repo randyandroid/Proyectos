@@ -37,65 +37,74 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="Nombre" min="-2" pref="70" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="Nombre" min="-2" pref="70" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="NombrePaciente" min="-2" pref="287" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="Apellido" min="-2" pref="70" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="ApellidoPaciente" min="-2" pref="287" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="NombreMedico2" min="-2" pref="70" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="CedulaPaciente" min="-2" pref="287" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="NombreMedico6" min="-2" pref="106" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="TelefonoPaciente" min="-2" pref="287" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="NombrePaciente" min="-2" pref="287" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="NombreMedico4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="NombreMedico7" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="Apellido" min="-2" pref="70" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="ApellidoPaciente" min="-2" pref="287" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="NombreMedico10" min="-2" max="-2" attributes="0"/>
+                                      <Component id="NombreMedico3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="NombreMedico2" min="-2" pref="70" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="CedulaPaciente" min="-2" pref="287" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="NombreMedico6" min="-2" pref="106" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="TelefonoPaciente" min="-2" pref="287" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="BotonRegistrar" alignment="1" min="-2" pref="169" max="-2" attributes="0"/>
+                                      <Component id="NombreMedico5" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="NombreMedico8" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="NombreMedico4" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="NombreMedico9" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="NombreMedico7" alignment="1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="NombreMedico10" min="-2" max="-2" attributes="0"/>
-                              <Component id="NombreMedico3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="BotonRegistrar" alignment="1" min="-2" pref="169" max="-2" attributes="0"/>
-                              <Component id="NombreMedico5" alignment="1" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="NombreMedico8" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="IngresoPaciente" min="-2" pref="287" max="-2" attributes="0"/>
-                      <Component id="HorarioPaciente" min="-2" pref="287" max="-2" attributes="0"/>
-                      <Component id="SexoPaciente" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
-                      <Component id="EstadoPaciente" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
-                      <Component id="EdadPaciente" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
-                      <Component id="NacimientoPaciente" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
-                      <Component id="DomicilioPaciente" min="-2" pref="287" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="EdadPaciente" alignment="0" pref="287" max="32767" attributes="0"/>
+                      <Component id="DomicilioPaciente" pref="287" max="32767" attributes="0"/>
+                      <Component id="CbxPacienteEstado" alignment="0" max="32767" attributes="0"/>
+                      <Component id="CbxPacienteSexo" max="32767" attributes="0"/>
+                      <Component id="JdtPacienteNacimiento" alignment="0" min="-2" pref="243" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="JdtPacienteFecha" min="-2" pref="217" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="214" max="-2" attributes="0"/>
               </Group>
@@ -105,20 +114,8 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="NombreMedico3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="DomicilioPaciente" min="-2" pref="36" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="NacimientoPaciente" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="NombreMedico10" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
@@ -135,48 +132,73 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <Component id="NombrePaciente" min="-2" pref="36" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="19" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="24" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace min="0" pref="19" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="NombreMedico7" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <Component id="EstadoPaciente" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                              <Component id="CbxPacienteEstado" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                               </Group>
                           </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="NombreMedico3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="DomicilioPaciente" min="-2" pref="36" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="NombreMedico10" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="JdtPacienteNacimiento" min="-2" pref="39" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="ApellidoPaciente" min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="Apellido" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                                  <Component id="SexoPaciente" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Component id="NombreMedico4" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="TelefonoPaciente" min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="NombreMedico6" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="NombreMedico4" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="CbxPacienteSexo" min="-2" pref="36" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="CedulaPaciente" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="NombreMedico2" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="NombreMedico8" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="JdtPacienteFecha" min="-2" pref="34" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="TelefonoPaciente" min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="NombreMedico6" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="IngresoPaciente" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="NombreMedico8" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="CedulaPaciente" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="NombreMedico2" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="NombreMedico9" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="HorarioPaciente" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                  </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="BotonRegistrar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="206" max="32767" attributes="0"/>
+                  <EmptySpace pref="169" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -268,16 +290,10 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NombrePacienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="IngresoPaciente">
-        </Component>
-        <Component class="javax.swing.JTextField" name="EstadoPaciente">
-        </Component>
         <Component class="javax.swing.JTextField" name="DomicilioPaciente">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DomicilioPacienteActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="SexoPaciente">
         </Component>
         <Component class="javax.swing.JLabel" name="NombreMedico8">
           <Properties>
@@ -299,19 +315,6 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="NombreMedico9">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="14" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Hora de ingreso : "/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="HorarioPaciente">
-        </Component>
         <Component class="javax.swing.JLabel" name="NombreMedico10">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -322,11 +325,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Fecha de nacimiento:"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="NacimientoPaciente">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NacimientoPacienteActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="NombreMedico5">
           <Properties>
@@ -354,6 +352,43 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Registrar "/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonRegistrarActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="CbxPacienteEstado">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="5">
+                <StringItem index="0" value="Seleccione"/>
+                <StringItem index="1" value="Soltero/a"/>
+                <StringItem index="2" value="Casado/a"/>
+                <StringItem index="3" value="Viudo/a"/>
+                <StringItem index="4" value="Divorciado/a"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="CbxPacienteSexo">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Selecciona"/>
+                <StringItem index="1" value="Masculino"/>
+                <StringItem index="2" value="Femenino"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="JdtPacienteNacimiento">
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="JdtPacienteFecha">
         </Component>
       </SubComponents>
     </Container>

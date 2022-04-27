@@ -4,11 +4,24 @@
  */
 package Vista;
 
+import Modelo.Paciente;
+import Modelo.PacienteDAO;
+import java.util.Calendar;
+import java.util.Date;
+import javax.swing.JOptionPane;
+
+
+
 /**
  *
  * @author Matias
  */
 public class RegistrarPaciente extends javax.swing.JPanel {
+    
+    Paciente objPaciente = new Paciente();
+    PacienteDAO objPacienteDAO = new PacienteDAO();
+    
+    
 
     /**
      * Creates new form Medico
@@ -37,20 +50,18 @@ public class RegistrarPaciente extends javax.swing.JPanel {
         ApellidoPaciente = new javax.swing.JTextField();
         TelefonoPaciente = new javax.swing.JTextField();
         NombrePaciente = new javax.swing.JTextField();
-        IngresoPaciente = new javax.swing.JTextField();
-        EstadoPaciente = new javax.swing.JTextField();
         DomicilioPaciente = new javax.swing.JTextField();
-        SexoPaciente = new javax.swing.JTextField();
         NombreMedico8 = new javax.swing.JLabel();
         CedulaPaciente = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        NombreMedico9 = new javax.swing.JLabel();
-        HorarioPaciente = new javax.swing.JTextField();
         NombreMedico10 = new javax.swing.JLabel();
-        NacimientoPaciente = new javax.swing.JTextField();
         NombreMedico5 = new javax.swing.JLabel();
         EdadPaciente = new javax.swing.JTextField();
         BotonRegistrar = new javax.swing.JButton();
+        CbxPacienteEstado = new javax.swing.JComboBox<>();
+        CbxPacienteSexo = new javax.swing.JComboBox<>();
+        JdtPacienteNacimiento = new com.toedter.calendar.JDateChooser();
+        JdtPacienteFecha = new com.toedter.calendar.JDateChooser();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -103,19 +114,9 @@ public class RegistrarPaciente extends javax.swing.JPanel {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PacienteReg.png"))); // NOI18N
 
-        NombreMedico9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        NombreMedico9.setForeground(new java.awt.Color(0, 0, 0));
-        NombreMedico9.setText("Hora de ingreso : ");
-
         NombreMedico10.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         NombreMedico10.setForeground(new java.awt.Color(0, 0, 0));
         NombreMedico10.setText("Fecha de nacimiento:");
-
-        NacimientoPaciente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NacimientoPacienteActionPerformed(evt);
-            }
-        });
 
         NombreMedico5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         NombreMedico5.setForeground(new java.awt.Color(0, 0, 0));
@@ -130,76 +131,81 @@ public class RegistrarPaciente extends javax.swing.JPanel {
         BotonRegistrar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonRegistrar.setForeground(new java.awt.Color(51, 51, 51));
         BotonRegistrar.setText("Registrar ");
+        BotonRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRegistrarActionPerformed(evt);
+            }
+        });
+
+        CbxPacienteEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Soltero/a", "Casado/a", "Viudo/a", "Divorciado/a" }));
+
+        CbxPacienteSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Masculino", "Femenino" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(NombrePaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(Apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ApellidoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(NombreMedico2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(CedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(NombreMedico6, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TelefonoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(44, 44, 44)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NombreMedico8, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(NombreMedico4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(NombreMedico9, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(NombreMedico7, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(NombreMedico10)
-                            .addComponent(NombreMedico3)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(NombrePaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(Apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(ApellidoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(NombreMedico2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(CedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(NombreMedico6, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(TelefonoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(NombreMedico4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(NombreMedico7, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(NombreMedico10)
+                                    .addComponent(NombreMedico3)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(BotonRegistrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(NombreMedico5, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addGap(37, 37, 37))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BotonRegistrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NombreMedico5, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(IngresoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HorarioPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SexoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EstadoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EdadPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NacimientoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DomicilioPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(NombreMedico8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(EdadPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                    .addComponent(DomicilioPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                    .addComponent(CbxPacienteEstado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CbxPacienteSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JdtPacienteNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(JdtPacienteFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(214, 214, 214))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(NombreMedico3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DomicilioPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(NacimientoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NombreMedico10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(1, 1, 1)
                         .addComponent(jLabel1)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -214,35 +220,51 @@ public class RegistrarPaciente extends javax.swing.JPanel {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(NombrePaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 19, Short.MAX_VALUE))
+                                        .addGap(0, 24, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addGap(0, 19, Short.MAX_VALUE)
+                                        .addGap(0, 20, Short.MAX_VALUE)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(NombreMedico7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(EstadoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                            .addComponent(CbxPacienteEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(NombreMedico3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DomicilioPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NombreMedico10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JdtPacienteNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(156, 156, 156)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(ApellidoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(SexoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(NombreMedico4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(TelefonoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NombreMedico6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(IngresoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(NombreMedico8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NombreMedico2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NombreMedico9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HorarioPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(TelefonoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NombreMedico6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(NombreMedico4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CbxPacienteSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(57, 57, 57)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NombreMedico2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NombreMedico8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JdtPacienteFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(BotonRegistrar)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 730));
@@ -256,26 +278,68 @@ public class RegistrarPaciente extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_DomicilioPacienteActionPerformed
 
-    private void NacimientoPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NacimientoPacienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NacimientoPacienteActionPerformed
-
     private void EdadPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EdadPacienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EdadPacienteActionPerformed
+
+    private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
+        // TODO add your handling code here:
+        
+       //convierto las fechas
+       int Anac,Aing;
+       int Mnac,Ming;
+       int Dnac,Ding;
+       
+       Anac = JdtPacienteNacimiento.getCalendar().get(Calendar.YEAR);
+       Aing = JdtPacienteFecha.getCalendar().get(Calendar.YEAR);
+       Mnac = JdtPacienteNacimiento.getCalendar().get(Calendar.MONTH)+1;
+       Ming = JdtPacienteFecha.getCalendar().get(Calendar.MONTH)+1;
+       Dnac = JdtPacienteNacimiento.getCalendar().get(Calendar.DAY_OF_MONTH);
+       Ding = JdtPacienteFecha.getCalendar().get(Calendar.DAY_OF_MONTH);
+       
+       String NfechaNac = Anac+ "-"+Mnac+ "-"+Dnac;
+       String NfechaIng = Aing+ "-"+Ming+ "-"+Ding;
+       //fin convertir fechas
+        
+    if (!"".equals(CedulaPaciente.getText()) && !"".equals(NombrePaciente.getText()) && !"".equals(TelefonoPaciente.getText()) && !"".equals(DomicilioPaciente.getText()) && !"".equals(JdtPacienteNacimiento.getDate()) && !"".equals(EdadPaciente.getText()) && !"".equals(CbxPacienteEstado.getSelectedItem()) && !"".equals(CbxPacienteSexo.getSelectedItem()) && !"".equals(JdtPacienteFecha.getDate()) ) {
+
+        objPaciente.setCedula(CedulaPaciente.getText());
+        objPaciente.setNombre(NombrePaciente.getText());
+        objPaciente.setApellido(ApellidoPaciente.getText());
+        objPaciente.setTelefono(TelefonoPaciente.getText());
+        objPaciente.setDireccion(DomicilioPaciente.getText());
+        objPaciente.setFechaNacimiento(NfechaNac);
+        objPaciente.setEdad(Integer.parseInt(EdadPaciente.getText()));
+        objPaciente.setEstado((String) CbxPacienteEstado.getSelectedItem());
+        objPaciente.setSexo((String) CbxPacienteSexo.getSelectedItem());
+       objPaciente.setFechaIngreso(NfechaIng);
+      
+       objPacienteDAO.RegistrarPaciente(objPaciente);
+              
+            JOptionPane.showMessageDialog(null, "Los Datos del cliente han sido guardado de manera correcta");
+
+        }//fin del if
+        else {
+
+            JOptionPane.showMessageDialog(null, "Hay campos vacios, debe llenar todos los campos");
+        }//fin del else
+
+        
+        
+    }//GEN-LAST:event_BotonRegistrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Apellido;
     private javax.swing.JTextField ApellidoPaciente;
     private javax.swing.JButton BotonRegistrar;
+    private javax.swing.JComboBox<String> CbxPacienteEstado;
+    private javax.swing.JComboBox<String> CbxPacienteSexo;
     private javax.swing.JTextField CedulaPaciente;
     private javax.swing.JTextField DomicilioPaciente;
     private javax.swing.JTextField EdadPaciente;
-    private javax.swing.JTextField EstadoPaciente;
-    private javax.swing.JTextField HorarioPaciente;
-    private javax.swing.JTextField IngresoPaciente;
-    private javax.swing.JTextField NacimientoPaciente;
+    private com.toedter.calendar.JDateChooser JdtPacienteFecha;
+    private com.toedter.calendar.JDateChooser JdtPacienteNacimiento;
     private javax.swing.JLabel Nombre;
     private javax.swing.JLabel NombreMedico10;
     private javax.swing.JLabel NombreMedico2;
@@ -285,9 +349,7 @@ public class RegistrarPaciente extends javax.swing.JPanel {
     private javax.swing.JLabel NombreMedico6;
     private javax.swing.JLabel NombreMedico7;
     private javax.swing.JLabel NombreMedico8;
-    private javax.swing.JLabel NombreMedico9;
     private javax.swing.JTextField NombrePaciente;
-    private javax.swing.JTextField SexoPaciente;
     private javax.swing.JTextField TelefonoPaciente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
