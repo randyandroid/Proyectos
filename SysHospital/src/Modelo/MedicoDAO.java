@@ -97,6 +97,49 @@ public class MedicoDAO {
         
     }
     
+      public List ListarMedicos(){
+        
+        List<Medicos> objMedicoLista = new ArrayList();
+        
+        String sql = "SELECT *FROM Medicos";
+        
+        try{
+            
+            con = objConexion.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                Medicos Lmedicos = new Medicos();
+                
+                
+                Lmedicos.setId(rs.getInt("idMedicos"));
+               Lmedicos.setCedula(rs.getString("MedicoCedula"));
+               Lmedicos.setNombre(rs.getString("MedicoNombre"));
+               Lmedicos.setApellido(rs.getString("MedicoApellido"));
+               Lmedicos.setTelefono(rs.getString("MedicoTelefono"));
+               Lmedicos.setDomicilio(rs.getString("MedicoDomicilio"));
+               Lmedicos.setEstado(rs.getString("MedicoEstado"));
+               Lmedicos.setSexo(rs.getString("MedicoSexo"));
+               Lmedicos.setJornada(rs.getString("MedicoJornada"));
+               Lmedicos.setEspecialidad(rs.getString("MedicoEspecialidad"));
+               
+                objMedicoLista.add(Lmedicos);
+                
+            }//fin del while
+            
+        }catch(SQLException e){
+            
+            JOptionPane.showMessageDialog(null, e.toString());
+            
+        }
+        
+        return objMedicoLista;
+    }
+    //fin listar 
+     
+     
+     
     
     
 }

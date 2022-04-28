@@ -5,6 +5,8 @@
 package Vista;
 
 import java.awt.BorderLayout;
+import java.awt.Cursor;
+import static java.awt.Frame.HAND_CURSOR;
 
 /**
  *
@@ -19,7 +21,7 @@ public class Medicos extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         
-        Medico me = new Medico ();
+        VerMedico me = new VerMedico ();
         me.setSize(1070, 550);
         me.setLocation(0, 0);
 
@@ -28,6 +30,10 @@ public class Medicos extends javax.swing.JFrame {
         
         Contenedor.revalidate();
         Contenedor.repaint();
+        BotonMedico.setCursor(new Cursor(HAND_CURSOR));
+        VerMedico.setCursor(new Cursor(HAND_CURSOR));
+        BotonRegistrarMedico.setCursor(new Cursor(HAND_CURSOR));
+        
     }
 
     /**
@@ -207,7 +213,7 @@ public class Medicos extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonRegistrarMedicoActionPerformed
 
     private void VerMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerMedicoActionPerformed
-        VerMedico me = new VerMedico ();
+        DisponibilidadMedico me = new DisponibilidadMedico ();
         me.setSize(1070, 550);
         me.setLocation(0, 0);
 
@@ -219,7 +225,7 @@ public class Medicos extends javax.swing.JFrame {
     }//GEN-LAST:event_VerMedicoActionPerformed
 
     private void BotonMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMedicoActionPerformed
-        Medico me = new Medico ();
+        VerMedico me = new VerMedico ();
         me.setSize(1070, 550);
         me.setLocation(0, 0);
 
