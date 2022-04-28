@@ -49,6 +49,7 @@ public class MenuP extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
         MenuTurnos = new javax.swing.JMenu();
         MenuAdm = new javax.swing.JMenu();
         MenuSeg = new javax.swing.JMenu();
@@ -192,6 +193,14 @@ public class MenuP extends javax.swing.JFrame {
         jMenuItem3.setText("Disponibilidad  de Medicos");
         MenuMedicos.add(jMenuItem3);
 
+        jMenuItem8.setText("Especialidades de Medicos");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        MenuMedicos.add(jMenuItem8);
+
         MenuVer.add(MenuMedicos);
 
         MenuTurnos.setText("Citas");
@@ -325,6 +334,14 @@ public class MenuP extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        
+        EspecialidadesG obj = new EspecialidadesG();
+        obj.setVisible(true);
+        
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -395,5 +412,6 @@ public class MenuP extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     // End of variables declaration//GEN-END:variables
 }
