@@ -55,9 +55,7 @@ public class MenuP extends javax.swing.JFrame {
         MenuSeg = new javax.swing.JMenu();
         MenuCrearUsuario = new javax.swing.JMenuItem();
         MenuVerUsuario = new javax.swing.JMenuItem();
-        MenuPermisosUsuario = new javax.swing.JMenuItem();
-        MenuEditarUsuario = new javax.swing.JMenuItem();
-        MenuCambiarClave = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         MenuAcercade = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
@@ -230,24 +228,13 @@ public class MenuP extends javax.swing.JFrame {
         });
         MenuSeg.add(MenuVerUsuario);
 
-        MenuPermisosUsuario.setText("Ver Permisos de Usuario");
-        MenuPermisosUsuario.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem9.setText("Cambiar Contraseña");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuPermisosUsuarioActionPerformed(evt);
+                jMenuItem9ActionPerformed(evt);
             }
         });
-        MenuSeg.add(MenuPermisosUsuario);
-
-        MenuEditarUsuario.setText("Editar Usuario");
-        MenuSeg.add(MenuEditarUsuario);
-
-        MenuCambiarClave.setText("Cambiar Contraseña");
-        MenuCambiarClave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuCambiarClaveActionPerformed(evt);
-            }
-        });
-        MenuSeg.add(MenuCambiarClave);
+        MenuSeg.add(jMenuItem9);
 
         MenuAdm.add(MenuSeg);
 
@@ -282,15 +269,11 @@ public class MenuP extends javax.swing.JFrame {
          dispose();
     }//GEN-LAST:event_MenuCrearUsuarioActionPerformed
 
-    private void MenuCambiarClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCambiarClaveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MenuCambiarClaveActionPerformed
-
-    private void MenuPermisosUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPermisosUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MenuPermisosUsuarioActionPerformed
-
     private void MenuVerUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuVerUsuarioActionPerformed
+        VerUsuarios obj = new VerUsuarios();
+        obj.setVisible(true);
+        dispose();
+
         
     }//GEN-LAST:event_MenuVerUsuarioActionPerformed
 
@@ -342,6 +325,13 @@ public class MenuP extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+        CambiarClave obj = new CambiarClave();
+        obj.setVisible(true);
+        
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -392,12 +382,9 @@ public class MenuP extends javax.swing.JFrame {
     private javax.swing.JLabel FondoMenu;
     private javax.swing.JMenu MenuAcercade;
     private javax.swing.JMenu MenuAdm;
-    private javax.swing.JMenuItem MenuCambiarClave;
     private javax.swing.JMenuItem MenuCrearUsuario;
-    private javax.swing.JMenuItem MenuEditarUsuario;
     private javax.swing.JMenu MenuMedicos;
     private javax.swing.JMenu MenuPaciente;
-    private javax.swing.JMenuItem MenuPermisosUsuario;
     private javax.swing.JMenuBar MenuPrincipal;
     private javax.swing.JMenu MenuSeg;
     private javax.swing.JMenu MenuTurnos;
@@ -413,5 +400,6 @@ public class MenuP extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     // End of variables declaration//GEN-END:variables
 }
