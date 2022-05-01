@@ -4,30 +4,26 @@
  */
 package Vista;
 
-import Modelo.Conexion;
 import Modelo.PacienteDAO;
 import Modelo.Paciente;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.List;
-import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.RowFilter;
+import javax.swing.table.TableRowSorter;
 /**
  *
  * @author Matias
  */
 public class VerPaciente extends javax.swing.JPanel {
 
-  
+   TableRowSorter TrsBuscar;
     PacienteDAO objPacienteDAO = new PacienteDAO();
     
     DefaultTableModel ModeloTabla = new DefaultTableModel();
     
+   
     public VerPaciente() {
         initComponents();
         
@@ -73,7 +69,7 @@ public class VerPaciente extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaPaciente = new javax.swing.JTable();
         BuscarPaciente = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(1070, 550));
@@ -116,12 +112,23 @@ public class VerPaciente extends javax.swing.JPanel {
             TablaPaciente.getColumnModel().getColumn(8).setPreferredWidth(300);
         }
 
-        jButton1.setText("Buscar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BuscarPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BuscarPacienteActionPerformed(evt);
             }
         });
+        BuscarPaciente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                BuscarPacienteKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                BuscarPacienteKeyTyped(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Buscar Paciente:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -133,22 +140,22 @@ public class VerPaciente extends javax.swing.JPanel {
                         .addGap(54, 54, 54)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 828, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(348, 348, 348)
-                        .addComponent(BuscarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(231, 231, 231)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)))
+                        .addComponent(BuscarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(188, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addGap(56, 56, 56)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BuscarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jLabel1)
+                    .addComponent(BuscarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -167,17 +174,41 @@ public class VerPaciente extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BuscarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarPacienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BuscarPacienteActionPerformed
+
+    private void BuscarPacienteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BuscarPacienteKeyPressed
         // TODO add your handling code here:
         
-    
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BuscarPacienteKeyPressed
+
+    private void BuscarPacienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BuscarPacienteKeyTyped
+        // TODO add your handling code here:
+        
+        
+        BuscarPaciente.addKeyListener(new KeyAdapter(){
+            @Override
+            public void keyReleased(KeyEvent e) {
+               
+                TrsBuscar.setRowFilter(RowFilter.regexFilter(BuscarPaciente.getText(), 0));
+                 TrsBuscar.setRowFilter(RowFilter.regexFilter(BuscarPaciente.getText(), 1));
+               
+                
+            }
+            
+        } );
+        
+        TrsBuscar = new TableRowSorter(ModeloTabla);
+        TablaPaciente.setRowSorter(TrsBuscar);
+        
+    }//GEN-LAST:event_BuscarPacienteKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField BuscarPaciente;
     private javax.swing.JTable TablaPaciente;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

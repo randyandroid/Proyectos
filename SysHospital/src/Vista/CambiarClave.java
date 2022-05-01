@@ -6,9 +6,13 @@
 package Vista;
  import Modelo.Login;
 import Modelo.LoginDAO;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 
 /**
@@ -20,7 +24,8 @@ public class CambiarClave extends javax.swing.JFrame {
     LoginDAO objLoginDAO = new LoginDAO();
     Login objLogin = new Login();
     DefaultTableModel ModeloTabla = new DefaultTableModel();
-    
+    TableRowSorter TrsBuscar;
+            
     /**
      * Creates new form VerUsuarios
      */
@@ -69,8 +74,7 @@ public class CambiarClave extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        BuscarUsuario = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         CodigoU = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -116,7 +120,11 @@ public class CambiarClave extends javax.swing.JFrame {
 
         jLabel5.setText("Tipo Usuario:");
 
-        jButton1.setText("Buscar");
+        BuscarUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                BuscarUsuarioKeyTyped(evt);
+            }
+        });
 
         jButton4.setText("Guardar Nueva Contraseña");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -145,9 +153,7 @@ public class CambiarClave extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(102, 102, 102)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(BuscarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton4)
                 .addGap(78, 78, 78))
@@ -184,8 +190,7 @@ public class CambiarClave extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
+                    .addComponent(BuscarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -285,7 +290,7 @@ public class CambiarClave extends javax.swing.JFrame {
                       
                      objLoginDAO.ModificarClave(objLogin);
                      JOptionPane.showMessageDialog(null, "La Contraseña ha sido Modificada");
-                    
+                   
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Las Nuevas contraseñas no coinciden");
@@ -301,6 +306,31 @@ public class CambiarClave extends javax.swing.JFrame {
         
        
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void BuscarUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BuscarUsuarioKeyTyped
+        // TODO add your handling code here:
+                                        
+       
+        BuscarUsuario.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                
+              TrsBuscar.setRowFilter(RowFilter.regexFilter(BuscarUsuario.getText(), 0));
+              TrsBuscar.setRowFilter(RowFilter.regexFilter(BuscarUsuario.getText(), 1));
+                
+                
+            }
+            
+        } );
+        
+        
+        TrsBuscar = new TableRowSorter(ModeloTabla);
+        TablaUsuario.setRowSorter(TrsBuscar);
+    
+        
+        
+        
+    }//GEN-LAST:event_BuscarUsuarioKeyTyped
 
     /**
      * @param args the command line arguments
@@ -346,6 +376,7 @@ public class CambiarClave extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField BuscarUsuario;
     private javax.swing.JPasswordField CActual;
     private javax.swing.JPasswordField Cnueva;
     private javax.swing.JTextField CodigoU;
@@ -354,7 +385,6 @@ public class CambiarClave extends javax.swing.JFrame {
     private javax.swing.JTable TablaUsuario;
     private javax.swing.JTextField TipoUsuarioU;
     private javax.swing.JTextField UsuarioU1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -365,6 +395,5 @@ public class CambiarClave extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

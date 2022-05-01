@@ -1,6 +1,7 @@
 
 package Modelo;
 
+import Vista.VerUsuarios;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -128,8 +129,9 @@ public class LoginDAO {
     public List ListarUsuario(){
         
         List<Login> objLoginLista = new ArrayList();
+
         
-        String sql = "SELECT *FROM Usuario";
+       String sql = "SELECT *FROM Usuario";
         
         try{
             
@@ -138,9 +140,9 @@ public class LoginDAO {
             rs = ps.executeQuery();
             
             while(rs.next()){
+                
                 Login Llogin = new Login();
-                
-                
+                     
                Llogin.setId(rs.getInt("idUsuario"));
                Llogin.setNombre(rs.getString("UsuarioNombre"));
                Llogin.setUser(rs.getString("UsuarioUser"));
@@ -233,6 +235,7 @@ public class LoginDAO {
         
         
     }
+    
     
     
     

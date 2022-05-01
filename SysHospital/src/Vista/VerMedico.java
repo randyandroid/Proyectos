@@ -6,8 +6,13 @@ package Vista;
 
 import Modelo.Medicos;
 import Modelo.MedicoDAO;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.List;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+import javax.swing.text.TabExpander;
 
 /**
  *
@@ -18,7 +23,7 @@ public class VerMedico extends javax.swing.JPanel {
 
     MedicoDAO objMedicoDAO = new MedicoDAO();
     DefaultTableModel ModeloTabla = new DefaultTableModel();
-    
+    TableRowSorter TrsBuscar;
     
     public VerMedico() {
         initComponents();
@@ -66,6 +71,8 @@ public class VerMedico extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaMedico = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        BuscarMedico = new javax.swing.JTextField();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
@@ -91,21 +98,50 @@ public class VerMedico extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(TablaMedico);
 
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Buscar Medico:");
+
+        BuscarMedico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarMedicoActionPerformed(evt);
+            }
+        });
+        BuscarMedico.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                BuscarMedicoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                BuscarMedicoKeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 828, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 828, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(277, 277, 277)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BuscarMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
+                .addGap(63, 63, 63)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(BuscarMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(209, Short.MAX_VALUE))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -124,10 +160,40 @@ public class VerMedico extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BuscarMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarMedicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BuscarMedicoActionPerformed
+
+    private void BuscarMedicoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BuscarMedicoKeyPressed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_BuscarMedicoKeyPressed
+
+    private void BuscarMedicoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BuscarMedicoKeyTyped
+        // TODO add your handling code here:
+
+        BuscarMedico.addKeyListener(new KeyAdapter(){
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+                TrsBuscar.setRowFilter(RowFilter.regexFilter(BuscarMedico.getText(), 1));
+                TrsBuscar.setRowFilter(RowFilter.regexFilter(BuscarMedico.getText(), 2));
+
+            }
+
+        } );
+
+        TrsBuscar = new TableRowSorter(ModeloTabla);
+        TablaMedico.setRowSorter(TrsBuscar);
+
+    }//GEN-LAST:event_BuscarMedicoKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField BuscarMedico;
     private javax.swing.JTable TablaMedico;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;

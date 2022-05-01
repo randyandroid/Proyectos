@@ -290,6 +290,7 @@ public class RegistrarPaciente extends javax.swing.JPanel {
        int Mnac,Ming;
        int Dnac,Ding;
        
+       
        Anac = JdtPacienteNacimiento.getCalendar().get(Calendar.YEAR);
        Aing = JdtPacienteFecha.getCalendar().get(Calendar.YEAR);
        Mnac = JdtPacienteNacimiento.getCalendar().get(Calendar.MONTH)+1;
@@ -299,6 +300,7 @@ public class RegistrarPaciente extends javax.swing.JPanel {
        
        String NfechaNac = Anac+ "-"+Mnac+ "-"+Dnac;
        String NfechaIng = Aing+ "-"+Ming+ "-"+Ding;
+       
        //fin convertir fechas
         
     if (!"".equals(CedulaPaciente.getText()) && !"".equals(NombrePaciente.getText()) && !"".equals(TelefonoPaciente.getText()) && !"".equals(DomicilioPaciente.getText()) && !"".equals(JdtPacienteNacimiento.getDate()) && !"".equals(EdadPaciente.getText()) && !"".equals(CbxPacienteEstado.getSelectedItem()) && !"".equals(CbxPacienteSexo.getSelectedItem()) && !"".equals(JdtPacienteFecha.getDate()) ) {

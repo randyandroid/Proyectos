@@ -3,7 +3,10 @@ package Vista;
 
 import Modelo.Especialidades;
 import Modelo.EspecialidadesDAO;
+import Modelo.Login;
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,11 +16,46 @@ public class EspecialidadesG extends javax.swing.JFrame {
 
     Especialidades objEspecialidades = new  Especialidades();
     EspecialidadesDAO objEspecialidadesDAO = new EspecialidadesDAO();
+     DefaultTableModel ModeloTabla = new DefaultTableModel();
    
     public EspecialidadesG() {
         initComponents();
+        ListarEspecialidad();
     }
 
+    public void ListarEspecialidad(){
+        
+        List<Especialidades> objEspLista = objEspecialidadesDAO.ListarEspecialidad();
+        ModeloTabla = (DefaultTableModel) TablaEspecialidad.getModel();
+        Object[] obj = new Object[2];
+        
+        for(int i=0; i<objEspLista.size(); i++){
+            
+            obj[0] = objEspLista.get(i).getId();
+            obj[1] = objEspLista.get(i).getDescripcion();
+           
+            ModeloTabla.addRow(obj);
+            
+        }//fin del for
+         
+        TablaEspecialidad.setModel(ModeloTabla);
+        
+    }//fin del metodo
+ 
+     public void LimpiarTabla(){
+        
+        for(int i=0; i<ModeloTabla.getRowCount(); i++){
+            
+            ModeloTabla.removeRow(i);
+           
+            i = i+1;
+            
+        }//fin del for
+        
+        
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,15 +69,54 @@ public class EspecialidadesG extends javax.swing.JFrame {
         EspecialidadNombre = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         CrearEspecialidad = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TablaEspecialidad = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        EspCodigo = new javax.swing.JTextField();
+        EditarEspecialidad = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Especialidad:");
+        jLabel1.setText("Codigo:");
 
-        CrearEspecialidad.setText("Crear Especialidad");
+        CrearEspecialidad.setText("Crear");
         CrearEspecialidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CrearEspecialidadActionPerformed(evt);
+            }
+        });
+
+        TablaEspecialidad.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Especialidad"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        TablaEspecialidad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaEspecialidadMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(TablaEspecialidad);
+
+        jLabel2.setText("Especialidad:");
+
+        EspCodigo.setEditable(false);
+
+        EditarEspecialidad.setText("Editar");
+        EditarEspecialidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditarEspecialidadActionPerformed(evt);
             }
         });
 
@@ -48,26 +125,44 @@ public class EspecialidadesG extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EspecialidadNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(CrearEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(137, 137, 137))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(CrearEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(EditarEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(EspecialidadNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EspCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EspecialidadNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addComponent(CrearEspecialidad)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addGap(69, 69, 69)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EspCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(EspecialidadNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CrearEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EditarEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -101,6 +196,55 @@ public class EspecialidadesG extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_CrearEspecialidadActionPerformed
+
+    private void TablaEspecialidadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaEspecialidadMouseClicked
+        // TODO add your handling code here:
+        int ValorTabla = TablaEspecialidad.rowAtPoint(evt.getPoint());
+
+        EspCodigo.setText(TablaEspecialidad.getValueAt(ValorTabla, 0).toString());
+        EspecialidadNombre.setText(TablaEspecialidad.getValueAt(ValorTabla, 1).toString());
+     
+
+    }//GEN-LAST:event_TablaEspecialidadMouseClicked
+
+    private void EditarEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarEspecialidadActionPerformed
+        // TODO add your handling code here:
+        
+        if ("".equals(EspCodigo.getText())) {
+            
+            JOptionPane.showMessageDialog(null, "Debe Seleccionar una Especialidad");
+            
+            
+        }//fin del if
+        
+        else{ 
+            
+            
+            if(!"".equals(EspCodigo.getText()) && !"".equals(EspecialidadNombre.getText())  ){
+                
+                objEspecialidades.setDescripcion(EspecialidadNombre.getText());       
+                objEspecialidades.setId(Integer.parseInt(EspCodigo.getText()));
+                
+             
+                objEspecialidadesDAO.EditarEspecialidad(objEspecialidades);
+                JOptionPane.showMessageDialog(null, "La especialidad ha sido Modificada");
+            
+           
+            }//fin del if
+            
+            else{
+                
+                JOptionPane.showMessageDialog(null, "Hay campos vacios");
+                
+            }//fin del else
+            
+        }//fin del else
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_EditarEspecialidadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,8 +291,13 @@ public class EspecialidadesG extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CrearEspecialidad;
+    private javax.swing.JButton EditarEspecialidad;
+    private javax.swing.JTextField EspCodigo;
     private javax.swing.JTextField EspecialidadNombre;
+    private javax.swing.JTable TablaEspecialidad;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

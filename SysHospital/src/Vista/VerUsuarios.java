@@ -4,11 +4,16 @@
  * and open the template in the editor.
  */
 package Vista;
+
  import Modelo.Login;
 import Modelo.LoginDAO;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 
 /**
@@ -20,6 +25,7 @@ public class VerUsuarios extends javax.swing.JFrame {
     LoginDAO objLoginDAO = new LoginDAO();
     Login objLogin = new Login();
     DefaultTableModel ModeloTabla = new DefaultTableModel();
+    TableRowSorter TrsBuscar;
     
     /**
      * Creates new form VerUsuarios
@@ -51,7 +57,18 @@ public class VerUsuarios extends javax.swing.JFrame {
         
     }//fin del metodo
  
-    
+     public void LimpiarTabla(){
+        
+        for(int i=0; i<ModeloTabla.getRowCount(); i++){
+            
+            ModeloTabla.removeRow(i);
+           
+            i = i+1;
+            
+        }//fin del for
+        
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,12 +88,12 @@ public class VerUsuarios extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        TxtBuscar = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         CodigoU = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -112,7 +129,16 @@ public class VerUsuarios extends javax.swing.JFrame {
 
         jLabel5.setText("Tipo Usuario:");
 
-        jButton1.setText("Buscar");
+        TxtBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtBuscarActionPerformed(evt);
+            }
+        });
+        TxtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TxtBuscarKeyTyped(evt);
+            }
+        });
 
         jButton2.setText("Modificar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -131,6 +157,8 @@ public class VerUsuarios extends javax.swing.JFrame {
         CodigoU.setEditable(false);
 
         jLabel3.setText("Codigo:");
+
+        jLabel4.setText("Buscar Usuario");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -153,11 +181,11 @@ public class VerUsuarios extends javax.swing.JFrame {
                     .addComponent(CodigoU, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(192, 192, 192))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
-                .addGap(227, 227, 227)
+                .addComponent(TxtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(298, 298, 298)
                 .addComponent(jButton2)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
@@ -166,17 +194,12 @@ public class VerUsuarios extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton4))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2)
+                            .addComponent(jButton4))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -195,7 +218,14 @@ public class VerUsuarios extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TipoUsuarioU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))))
+                            .addComponent(jLabel5)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TxtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(237, Short.MAX_VALUE))
         );
 
@@ -275,6 +305,34 @@ public class VerUsuarios extends javax.swing.JFrame {
         obj.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void TxtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtBuscarKeyTyped
+        // TODO add your handling code here:
+        
+        TxtBuscar.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+              
+              TrsBuscar.setRowFilter(RowFilter.regexFilter(TxtBuscar.getText(), 0));
+              TrsBuscar.setRowFilter(RowFilter.regexFilter(TxtBuscar.getText(), 1));
+                
+                
+            }
+            
+        } );
+        
+        
+        TrsBuscar = new TableRowSorter(ModeloTabla);
+        TablaUsuario.setRowSorter(TrsBuscar);
+        
+        
+        
+        
+    }//GEN-LAST:event_TxtBuscarKeyTyped
+
+    private void TxtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtBuscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -322,16 +380,16 @@ public class VerUsuarios extends javax.swing.JFrame {
     private javax.swing.JTextField NombreU;
     private javax.swing.JTable TablaUsuario;
     private javax.swing.JComboBox<String> TipoUsuarioU;
+    private javax.swing.JTextField TxtBuscar;
     private javax.swing.JTextField UsuarioU;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
