@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 public class PacienteDAO {
@@ -109,6 +110,74 @@ public class PacienteDAO {
     //fin listar 
   
     
+        public  Paciente BuscarPaciente(String Cpaciente){
+        
+        Paciente Bpaciente = new Paciente();
+        
+        String sql = "SELECT  * FROM paciente WHERE idPaciente=? or PacienteCedula=? or PacienteNombre=?";
+        
+        try{
+            
+            con = objConexion.getConnection();
+            ps = con.prepareStatement(sql);
+                    
+            ps.setString(1, Cpaciente);
+            ps.setString(2, Cpaciente);
+            ps.setString(3, Cpaciente);
+           rs= ps.executeQuery();
+            
+            if(rs.next()){
+                
+                Bpaciente.setNombre(rs.getString("PacienteNombre"));
+                Bpaciente.setApellido(rs.getString("PacienteApellido"));
+                Bpaciente.setCedula(rs.getString("PacienteCedula"));
+                Bpaciente.setTelefono(rs.getString("PacienteTelefono"));
+                Bpaciente.setSexo(rs.getString("PacienteSexo"));
+                Bpaciente.setEdad(rs.getInt("PacienteEdad"));
+                
+            }//fin del if
+            
+        }catch(SQLException e){
+            
+            JOptionPane.showMessageDialog(null, e.toString());
+            
+        }//fin try catch
+        
+        return Bpaciente;
+    }
+     
+     
+        public void ConsultarMedicos(JComboBox Cmedicos ){
+        
+        String sql = "SELECT distinct concat_ws(' ',MedicoNombre,MedicoApellido) AS 'Nombre' from medicos;";
+        
+        try{
+        
+            con = objConexion.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                
+                Cmedicos.addItem(rs.getString("Nombre"));
+                
+                
+            }
+            
+            
+            
+    }catch(SQLException e){
+        
+        JOptionPane.showMessageDialog(null, e.toString());
+    }
+        
+        
+    }
     
+        
+        
+        
+     
+     
     
 }

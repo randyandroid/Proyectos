@@ -94,7 +94,7 @@ public class LoginG extends javax.swing.JFrame {
         LabelClave.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LabelClave.setForeground(new java.awt.Color(102, 102, 102));
         LabelClave.setText("Contraseña :");
-        getContentPane().add(LabelClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 110, 30));
+        getContentPane().add(LabelClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 120, 30));
 
         TXtClave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
