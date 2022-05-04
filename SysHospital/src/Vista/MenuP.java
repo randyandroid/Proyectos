@@ -6,6 +6,8 @@
 package Vista;
 
 import java.awt.BorderLayout;
+import java.awt.Cursor;
+import static java.awt.Frame.HAND_CURSOR;
 
 /**
  *
@@ -22,8 +24,19 @@ public class MenuP extends javax.swing.JFrame {
         
         this.setExtendedState(MAXIMIZED_BOTH); //maximizo la ventana
      
+        VerMedico me = new VerMedico ();
+        me.setSize(1070, 550);
+        me.setLocation(0, 0);
+        
+         BotonDoctor.setCursor(new Cursor(HAND_CURSOR));
+        BotonPacientes.setCursor(new Cursor(HAND_CURSOR));
+        BotonCitas.setCursor(new Cursor(HAND_CURSOR));
+        BotonCerrar.setCursor(new Cursor(HAND_CURSOR));
+        
+        
     }
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -51,12 +64,14 @@ public class MenuP extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         MenuTurnos = new javax.swing.JMenu();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
         MenuAdm = new javax.swing.JMenu();
         MenuSeg = new javax.swing.JMenu();
         MenuCrearUsuario = new javax.swing.JMenuItem();
         MenuVerUsuario = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
         MenuAcercade = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
 
@@ -156,6 +171,16 @@ public class MenuP extends javax.swing.JFrame {
         MenuVer.setBackground(new java.awt.Color(204, 255, 255));
         MenuVer.setForeground(new java.awt.Color(0, 0, 0));
         MenuVer.setText("Ver");
+        MenuVer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuVerMouseClicked(evt);
+            }
+        });
+        MenuVer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuVerActionPerformed(evt);
+            }
+        });
 
         MenuPaciente.setText("Pacientes");
 
@@ -168,9 +193,19 @@ public class MenuP extends javax.swing.JFrame {
         MenuPaciente.add(jMenuItem4);
 
         jMenuItem5.setText("Ver Pacientes");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         MenuPaciente.add(jMenuItem5);
 
         jMenuItem6.setText("Historial clinico");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         MenuPaciente.add(jMenuItem6);
 
         MenuVer.add(MenuPaciente);
@@ -186,9 +221,19 @@ public class MenuP extends javax.swing.JFrame {
         MenuMedicos.add(jMenuItem1);
 
         jMenuItem2.setText("Ver Medicos");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         MenuMedicos.add(jMenuItem2);
 
         jMenuItem3.setText("Disponibilidad  de Medicos");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         MenuMedicos.add(jMenuItem3);
 
         jMenuItem8.setText("Especialidades de Medicos");
@@ -202,7 +247,32 @@ public class MenuP extends javax.swing.JFrame {
         MenuVer.add(MenuMedicos);
 
         MenuTurnos.setText("Citas");
+
+        jMenuItem11.setText("Ver Citas");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        MenuTurnos.add(jMenuItem11);
+
+        jMenuItem12.setText("Registrar Medicos");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        MenuTurnos.add(jMenuItem12);
+
         MenuVer.add(MenuTurnos);
+
+        jMenuItem10.setText("Salir del sistema");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        MenuVer.add(jMenuItem10);
 
         MenuPrincipal.add(MenuVer);
 
@@ -237,9 +307,6 @@ public class MenuP extends javax.swing.JFrame {
         MenuSeg.add(jMenuItem9);
 
         MenuAdm.add(MenuSeg);
-
-        jMenu1.setText("Salir del Sistema");
-        MenuAdm.add(jMenu1);
 
         MenuPrincipal.add(MenuAdm);
 
@@ -279,6 +346,12 @@ public class MenuP extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
    
+        
+        Medicos me = new Medicos ();
+        me.setVisible(true);
+      
+       me.RMedicos();
+        dispose();
            
             
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -292,6 +365,8 @@ public class MenuP extends javax.swing.JFrame {
     private void BotonPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPacientesActionPerformed
         Paciente pa = new Paciente();
            pa.setVisible(true);
+           
+           
            dispose();
     }//GEN-LAST:event_BotonPacientesActionPerformed
 
@@ -314,7 +389,11 @@ public class MenuP extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
+        Paciente Pa = new Paciente ();
+        Pa.setVisible(true);
+         
+         Pa.RPaciente();
+         dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
@@ -331,6 +410,68 @@ public class MenuP extends javax.swing.JFrame {
         obj.setVisible(true);
         
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        
+           dispose();
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void MenuVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuVerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuVerActionPerformed
+
+    private void MenuVerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuVerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuVerMouseClicked
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Medicos me = new Medicos ();
+        me.setVisible(true);
+      
+       
+        dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        
+        Medicos me = new Medicos ();
+        me.setVisible(true);
+         
+         me.DMedicos();
+         dispose();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        Paciente Pa = new Paciente ();
+        Pa.setVisible(true);
+         
+         Pa.VPaciente();
+         dispose();
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        Paciente Pa = new Paciente ();
+        Pa.setVisible(true);
+         
+         Pa.HPaciente();
+         dispose();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+         Citas Ci = new Citas ();
+        Ci.setVisible(true);
+         
+         Ci.VCitas();
+         dispose();
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        Citas Ci = new Citas ();
+        Ci.setVisible(true);
+         
+         Ci.ACitas();
+         dispose();
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -391,8 +532,10 @@ public class MenuP extends javax.swing.JFrame {
     private javax.swing.JMenu MenuVer;
     private javax.swing.JMenuItem MenuVerUsuario;
     private javax.swing.JPanel PanelPrincipal;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

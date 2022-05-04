@@ -4,6 +4,9 @@
  */
 package Vista;
 
+import java.util.Enumeration;
+import java.util.Properties;
+
 /**
  *
  * @author Matias
@@ -63,7 +66,12 @@ public class Acerca extends javax.swing.JFrame {
 
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Sistema: Windows 11 version 10.0 running on amd64; Cp1252; es_DO (nb");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 550, 420, 30));
+        jLabel5.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                jLabel5ComponentAdded(evt);
+            }
+        });
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 550, 410, 30));
 
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Desarrolladores: Rosanny Batista, Randy Mármol y Eulise Matias");
@@ -104,6 +112,10 @@ public class Acerca extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jLabel5ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jLabel5ComponentAdded
+        
+    }//GEN-LAST:event_jLabel5ComponentAdded
 
     /**
      * @param args the command line arguments

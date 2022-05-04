@@ -5,6 +5,8 @@
 package Vista;
 
 import java.awt.BorderLayout;
+import java.awt.Cursor;
+import static java.awt.Frame.HAND_CURSOR;
 
 /**
  *
@@ -28,6 +30,11 @@ public class Paciente extends javax.swing.JFrame {
         
         Contenedor.revalidate();
         Contenedor.repaint();
+        
+        BotonPaciente.setCursor(new Cursor(HAND_CURSOR));
+        BotonRegistrarPaciente.setCursor(new Cursor(HAND_CURSOR));
+        HistorialClinico.setCursor(new Cursor(HAND_CURSOR));
+        
     }
 
     /**
@@ -184,6 +191,47 @@ public class Paciente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    public void VPaciente() {
+       VerPaciente pa = new VerPaciente ();
+     
+    
+      
+        pa.setSize(1070, 550);
+        pa.setLocation(0, 0);
+
+        Contenedor.removeAll();
+        Contenedor.add(pa, BorderLayout.CENTER);
+        
+        Contenedor.revalidate();
+        Contenedor.repaint();
+        
+    }
+    public void RPaciente() {
+       RegistrarPaciente pa = new RegistrarPaciente ();
+        pa.setSize(1070, 550);
+        pa.setLocation(0, 0);
+
+        Contenedor.removeAll();
+        Contenedor.add(pa, BorderLayout.CENTER);
+        
+        Contenedor.revalidate();
+        Contenedor.repaint();
+        
+    }
+    
+     public void HPaciente() {
+       HistorialClinico hc = new HistorialClinico ();
+        hc.setSize(1070, 550);
+        hc.setLocation(0, 0);
+
+        Contenedor.removeAll();
+        Contenedor.add(hc, BorderLayout.CENTER);
+        
+        Contenedor.revalidate();
+        Contenedor.repaint();
+        
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
              MenuP MP = new MenuP();
            MP.setVisible(true);

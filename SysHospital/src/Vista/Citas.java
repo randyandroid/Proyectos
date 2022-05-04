@@ -5,6 +5,7 @@
 package Vista;
 
 import java.awt.BorderLayout;
+import java.awt.Cursor;
 
 /**
  *
@@ -28,6 +29,9 @@ public class Citas extends javax.swing.JFrame {
         
         Contenedor.revalidate();
         Contenedor.repaint();
+        
+        BotonVerCitas.setCursor(new Cursor(HAND_CURSOR));
+        BotonAgendarCitas.setCursor(new Cursor(HAND_CURSOR));
     }
 
     /**
@@ -167,6 +171,32 @@ public class Citas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+        
+public void VCitas() {
+       VerCitas ci = new VerCitas ();
+        ci.setSize(1070, 550);
+        ci.setLocation(0, 0);
+
+        Contenedor.removeAll();
+        Contenedor.add(ci, BorderLayout.CENTER);
+        
+        Contenedor.revalidate();
+        Contenedor.repaint();
+        
+    }
+    
+public void ACitas() {
+       AgendarCitas ci = new AgendarCitas ();
+        ci.setSize(1070, 550);
+        ci.setLocation(0, 0);
+
+        Contenedor.removeAll();
+        Contenedor.add(ci, BorderLayout.CENTER);
+        
+        Contenedor.revalidate();
+        Contenedor.repaint();
+        
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        MenuP MP = new MenuP();
            MP.setVisible(true);

@@ -189,7 +189,34 @@ public class Medicos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+public void RMedicos() {
+        RegistrarMedico me = new RegistrarMedico ();
+        me.setSize(1070, 550);
+        me.setLocation(0, 0);
 
+        Contenedor.removeAll();
+        Contenedor.add(me, BorderLayout.CENTER);
+        
+        Contenedor.revalidate();
+        Contenedor.repaint();
+        
+    }
+    
+    
+public void DMedicos() {
+       DisponibilidadMedico me = new DisponibilidadMedico ();
+        me.setSize(1070, 550);
+        me.setLocation(0, 0);
+
+        Contenedor.removeAll();
+        Contenedor.add(me, BorderLayout.CENTER);
+        
+        Contenedor.revalidate();
+        Contenedor.repaint();
+        
+    }
+    
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        MenuP MP = new MenuP();
            MP.setVisible(true);

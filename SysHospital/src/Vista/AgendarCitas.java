@@ -8,6 +8,8 @@ import Modelo.PacienteDAO;
 import Modelo.Paciente;
 import Modelo.Citas;
 import Modelo.CitasDAO;
+import java.awt.Cursor;
+import static java.awt.Frame.HAND_CURSOR;
 import java.awt.event.KeyEvent;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
@@ -24,6 +26,7 @@ public class AgendarCitas extends javax.swing.JPanel {
    CitasDAO objCitaDAO = new CitasDAO();
    
     
+   
     
     /**
      * Creates new form Medico
@@ -33,7 +36,7 @@ public class AgendarCitas extends javax.swing.JPanel {
         
         
         objPacienteDAO.ConsultarMedicos(CbxMedico);
-        
+        BotonAgregar.setCursor(new Cursor(HAND_CURSOR));
     }
 
     /**
