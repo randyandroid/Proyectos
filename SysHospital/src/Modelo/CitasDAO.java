@@ -73,11 +73,51 @@ public class CitasDAO {
     }
     //fin del metodo
     
-    
-    
-    
-    
-    
-    
+     public List ListarCita(){
+        
+        List<Citas> objCitaLista = new ArrayList();
+        
+        String sql = "SELECT *FROM citas";
+        
+        try{
+            
+            con = objConexion.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                Citas Lcita = new Citas();
+                               
+               Lcita.setId(rs.getInt("idcitas"));
+               Lcita.setNombre(rs.getString("PacienteNombre"));
+               Lcita.setApellido(rs.getString("PacienteApellido"));
+               Lcita.setCedula(rs.getString("PacienteCedula"));
+               Lcita.setTelefono(rs.getString("Telefono"));
+               Lcita.setEdad(rs.getInt("PacienteEdad"));
+               Lcita.setSexo(rs.getString("PacienteSexo"));
+               Lcita.setFecha(rs.getString("PacienteFecha"));
+               Lcita.setJornada(rs.getString("PacienteJornada"));
+               Lcita.setHora(rs.getString("PacienteHora"));
+               Lcita.setTipo(rs.getString("TipoCita"));
+               Lcita.setMedico(rs.getString("PacienteMedico"));
+               
+               
+                objCitaLista.add(Lcita);
+                
+            }//fin del while
+            
+        }catch(SQLException e){
+            
+            JOptionPane.showMessageDialog(null, e.toString());
+            
+        }
+        
+        return objCitaLista;
+    }
+    //fin listar 
+  
+      
     
 }
+
+

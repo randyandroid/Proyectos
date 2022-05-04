@@ -176,8 +176,7 @@ public class VerMedico extends javax.swing.JPanel {
             @Override
             public void keyReleased(KeyEvent e) {
 
-                TrsBuscar.setRowFilter(RowFilter.regexFilter(BuscarMedico.getText(), 1));
-                TrsBuscar.setRowFilter(RowFilter.regexFilter(BuscarMedico.getText(), 2));
+                TrsBuscar.setRowFilter(RowFilter.regexFilter(BuscarMedico.getText(), 1,2));
 
             }
 

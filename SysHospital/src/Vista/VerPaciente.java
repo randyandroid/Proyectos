@@ -191,8 +191,7 @@ public class VerPaciente extends javax.swing.JPanel {
             @Override
             public void keyReleased(KeyEvent e) {
                
-                TrsBuscar.setRowFilter(RowFilter.regexFilter(BuscarPaciente.getText(), 0));
-                 TrsBuscar.setRowFilter(RowFilter.regexFilter(BuscarPaciente.getText(), 1));
+                TrsBuscar.setRowFilter(RowFilter.regexFilter(BuscarPaciente.getText(), 0,1));
                
                 
             }

@@ -312,8 +312,7 @@ public class VerUsuarios extends javax.swing.JFrame {
             @Override
             public void keyReleased(KeyEvent e) {
               
-              TrsBuscar.setRowFilter(RowFilter.regexFilter(TxtBuscar.getText(), 0));
-              TrsBuscar.setRowFilter(RowFilter.regexFilter(TxtBuscar.getText(), 1));
+              TrsBuscar.setRowFilter(RowFilter.regexFilter(TxtBuscar.getText(), 0,1));
                 
                 
             }
