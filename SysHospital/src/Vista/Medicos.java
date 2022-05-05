@@ -5,6 +5,7 @@
 package Vista;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Cursor;
 import static java.awt.Frame.HAND_CURSOR;
 
@@ -101,7 +102,6 @@ public class Medicos extends javax.swing.JFrame {
         VerMedico.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         VerMedico.setForeground(new java.awt.Color(0, 0, 0));
         VerMedico.setText("Disponibiliadad de Médicos");
-        VerMedico.setContentAreaFilled(false);
         VerMedico.setName(""); // NOI18N
         VerMedico.setSelected(true);
         VerMedico.addActionListener(new java.awt.event.ActionListener() {
@@ -114,9 +114,17 @@ public class Medicos extends javax.swing.JFrame {
         BotonRegistrarMedico.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonRegistrarMedico.setForeground(new java.awt.Color(0, 0, 0));
         BotonRegistrarMedico.setText("Registrar Médicos");
-        BotonRegistrarMedico.setContentAreaFilled(false);
+        BotonRegistrarMedico.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         BotonRegistrarMedico.setName(""); // NOI18N
         BotonRegistrarMedico.setSelected(true);
+        BotonRegistrarMedico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BotonRegistrarMedicoMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                BotonRegistrarMedicoMouseReleased(evt);
+            }
+        });
         BotonRegistrarMedico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonRegistrarMedicoActionPerformed(evt);
@@ -127,7 +135,6 @@ public class Medicos extends javax.swing.JFrame {
         BotonMedico.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonMedico.setForeground(new java.awt.Color(0, 0, 0));
         BotonMedico.setText("Médicos");
-        BotonMedico.setContentAreaFilled(false);
         BotonMedico.setName(""); // NOI18N
         BotonMedico.setSelected(true);
         BotonMedico.addActionListener(new java.awt.event.ActionListener() {
@@ -143,11 +150,11 @@ public class Medicos extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(BotonMedico)
-                .addGap(18, 18, 18)
-                .addComponent(BotonRegistrarMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(65, 65, 65)
+                .addComponent(BotonRegistrarMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
                 .addComponent(VerMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(340, Short.MAX_VALUE))
+                .addContainerGap(244, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,7 +162,7 @@ public class Medicos extends javax.swing.JFrame {
                 .addContainerGap(74, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(VerMedico)
-                    .addComponent(BotonRegistrarMedico)
+                    .addComponent(BotonRegistrarMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotonMedico))
                 .addContainerGap())
         );
@@ -262,6 +269,14 @@ public void DMedicos() {
         Contenedor.revalidate();
         Contenedor.repaint();
     }//GEN-LAST:event_BotonMedicoActionPerformed
+
+    private void BotonRegistrarMedicoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegistrarMedicoMousePressed
+       
+    }//GEN-LAST:event_BotonRegistrarMedicoMousePressed
+
+    private void BotonRegistrarMedicoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegistrarMedicoMouseReleased
+         
+    }//GEN-LAST:event_BotonRegistrarMedicoMouseReleased
 
     /**
      * @param args the command line arguments

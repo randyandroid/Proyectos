@@ -69,22 +69,9 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="BotonAgregar" min="-2" pref="169" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="449" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
-                          <Component id="Nombre1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtBuscar" min="-2" pref="196" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="1" attributes="0">
@@ -98,55 +85,76 @@
                                       <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="NombreMedico11" alignment="0" min="-2" pref="49" max="-2" attributes="0"/>
                               <Component id="NombreMedico15" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="TxtEdad" min="-2" pref="61" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="TxtApellido" min="-2" pref="287" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <Component id="TxtNombre" min="-2" pref="287" max="-2" attributes="0"/>
-                                      <Component id="TxtCedula" min="-2" pref="287" max="-2" attributes="0"/>
-                                      <Component id="TxtTelefono" min="-2" pref="287" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
-                                  <Component id="NombreMedico13" min="-2" pref="70" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="CbxSexo" min="-2" pref="192" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="NombreMedico8" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                                  <Component id="FechaCita" min="-2" pref="172" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="CbxJornada" min="-2" pref="147" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                                      <Component id="NombreMedico11" min="-2" pref="49" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="NombreMedico14" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="TxtHora" min="-2" pref="76" max="-2" attributes="0"/>
+                                      <Component id="CbxSexo" min="-2" pref="292" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="316" max="-2" attributes="0"/>
+                                      <Component id="BotonAgregar" min="-2" pref="169" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="TxtCedula" min="-2" pref="287" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="NombreMedico13" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="TxtTelefono" min="-2" pref="287" max="-2" attributes="0"/>
+                                              <EmptySpace pref="109" max="32767" attributes="0"/>
+                                              <Component id="NombreMedico9" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="TxtEdad" min="-2" pref="287" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="NombreMedico10" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="NombreMedico10" min="-2" max="-2" attributes="0"/>
-                                          <Component id="NombreMedico9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="CbxCita" pref="174" max="32767" attributes="0"/>
-                                          <Component id="CbxMedico" max="32767" attributes="0"/>
+                                          <Component id="CbxMedico" min="-2" pref="294" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="CbxJornada" min="-2" pref="149" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="NombreMedico14" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="TxtHora" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Component id="CbxCita" min="-2" pref="292" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="TxtApellido" min="-2" pref="287" max="-2" attributes="0"/>
+                                  <EmptySpace pref="102" max="32767" attributes="0"/>
+                                  <Component id="NombreMedico8" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="FechaCita" min="-2" pref="292" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="Nombre1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtBuscar" min="-2" pref="311" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="202" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -159,77 +167,65 @@
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="txtBuscar" min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="Nombre1" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="Nombre1" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="txtBuscar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="FechaCita" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Nombre" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="TxtNombre" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="NombreMedico8" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      </Group>
+                  <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Nombre" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="TxtNombre" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="NombreMedico11" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="CbxSexo" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="Apellido" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="TxtApellido" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="NombreMedico8" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="NombreMedico7" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="TxtCedula" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="NombreMedico13" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="CbxJornada" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="NombreMedico14" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="TxtHora" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="CbxJornada" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                                  <Component id="NombreMedico14" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="TxtHora" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="NombreMedico6" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="TxtTelefono" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="NombreMedico9" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="CbxCita" alignment="3" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="NombreMedico15" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="TxtEdad" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="CbxMedico" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="NombreMedico10" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
-                              <Component id="NombreMedico13" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace pref="208" max="32767" attributes="0"/>
+                                  <Component id="BotonAgregar" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                  </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="NombreMedico6" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="TxtTelefono" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="NombreMedico9" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="CbxCita" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="NombreMedico15" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="TxtEdad" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="NombreMedico11" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="CbxSexo" min="-2" pref="36" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="91" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="NombreMedico10" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="CbxMedico" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                          <Component id="BotonAgregar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="FechaCita" min="-2" pref="36" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -371,7 +367,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Medico"/>
+            <Property name="text" type="java.lang.String" value="M&#xe9;dico :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="CbxSexo">
@@ -445,7 +441,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Jornada:"/>
+            <Property name="text" type="java.lang.String" value="Jornada :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="NombreMedico14">

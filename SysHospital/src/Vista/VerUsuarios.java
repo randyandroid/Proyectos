@@ -182,7 +182,7 @@ public class VerUsuarios extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 350, 70, 30));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 350, 80, 30));
 
         jButton4.setText("Cambiar Contraseña");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -190,7 +190,7 @@ public class VerUsuarios extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 350, 130, 30));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 350, 150, 30));
 
         CodigoU.setEditable(false);
         jPanel1.add(CodigoU, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 150, 140, -1));
@@ -296,6 +296,7 @@ public class VerUsuarios extends javax.swing.JFrame {
         
         CambiarClave obj = new CambiarClave();
         obj.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void TxtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtBuscarKeyTyped

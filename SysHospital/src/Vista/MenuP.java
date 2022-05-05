@@ -50,9 +50,13 @@ public class MenuP extends javax.swing.JFrame {
 
         PanelPrincipal = new javax.swing.JPanel();
         BotonDoctor = new javax.swing.JButton();
-        BotonPacientes = new javax.swing.JButton();
-        BotonCitas = new javax.swing.JButton();
         BotonCerrar = new javax.swing.JButton();
+        BotonPacientes = new javax.swing.JButton();
+        Fondoazul2 = new javax.swing.JLabel();
+        BotonCitas = new javax.swing.JButton();
+        Fondoazul = new javax.swing.JLabel();
+        Fondoazul3 = new javax.swing.JLabel();
+        Fondoazul1 = new javax.swing.JLabel();
         Mostrar = new javax.swing.JLabel();
         FondoMenu = new javax.swing.JLabel();
         MenuPrincipal = new javax.swing.JMenuBar();
@@ -94,11 +98,12 @@ public class MenuP extends javax.swing.JFrame {
 
         getContentPane().add(PanelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1634, 982, -1, -1));
 
-        BotonDoctor.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        BotonDoctor.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         BotonDoctor.setForeground(new java.awt.Color(0, 0, 0));
         BotonDoctor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/NewdoctorGrande.png"))); // NOI18N
         BotonDoctor.setText("Médicos");
-        BotonDoctor.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        BotonDoctor.setToolTipText("");
+        BotonDoctor.setBorder(null);
         BotonDoctor.setContentAreaFilled(false);
         BotonDoctor.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/newdoctorPe.png"))); // NOI18N
         BotonDoctor.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/medicoNegroNew.png"))); // NOI18N
@@ -109,14 +114,31 @@ public class MenuP extends javax.swing.JFrame {
         });
         getContentPane().add(BotonDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 50, 430, 310));
 
-        BotonPacientes.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        BotonCerrar.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
+        BotonCerrar.setForeground(new java.awt.Color(0, 0, 0));
+        BotonCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salirNEWWWGrande.png"))); // NOI18N
+        BotonCerrar.setText("Cerrar Sesión");
+        BotonCerrar.setToolTipText("");
+        BotonCerrar.setBorder(null);
+        BotonCerrar.setContentAreaFilled(false);
+        BotonCerrar.setHideActionText(true);
+        BotonCerrar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        BotonCerrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salirNEWWWpequena.png"))); // NOI18N
+        BotonCerrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salirNegroNewww.png"))); // NOI18N
+        BotonCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCerrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BotonCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 430, 430, 310));
+
+        BotonPacientes.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         BotonPacientes.setForeground(new java.awt.Color(0, 0, 0));
         BotonPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PacienteNewGrande.png"))); // NOI18N
         BotonPacientes.setText("Pacientes");
         BotonPacientes.setToolTipText("");
-        BotonPacientes.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        BotonPacientes.setBorder(null);
         BotonPacientes.setContentAreaFilled(false);
-        BotonPacientes.setFocusable(false);
         BotonPacientes.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PacienteNewpequeno.png"))); // NOI18N
         BotonPacientes.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PacienteNewnegro.png"))); // NOI18N
         BotonPacientes.addActionListener(new java.awt.event.ActionListener() {
@@ -124,14 +146,17 @@ public class MenuP extends javax.swing.JFrame {
                 BotonPacientesActionPerformed(evt);
             }
         });
-        getContentPane().add(BotonPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 430, 310));
+        getContentPane().add(BotonPacientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 430, 310));
 
-        BotonCitas.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        Fondoazul2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondoazulpanel.png"))); // NOI18N
+        getContentPane().add(Fondoazul2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 590, 330));
+
+        BotonCitas.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         BotonCitas.setForeground(new java.awt.Color(0, 0, 0));
         BotonCitas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CitaGrandeNew.png"))); // NOI18N
         BotonCitas.setText("Citas");
         BotonCitas.setToolTipText("");
-        BotonCitas.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        BotonCitas.setBorder(null);
         BotonCitas.setContentAreaFilled(false);
         BotonCitas.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CitaPequenaNew.png"))); // NOI18N
         BotonCitas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CitaGrandeNegroNew.png"))); // NOI18N
@@ -140,25 +165,16 @@ public class MenuP extends javax.swing.JFrame {
                 BotonCitasActionPerformed(evt);
             }
         });
-        getContentPane().add(BotonCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 430, 310));
+        getContentPane().add(BotonCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 430, 310));
 
-        BotonCerrar.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
-        BotonCerrar.setForeground(new java.awt.Color(0, 0, 0));
-        BotonCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CerrargrandeNew.png"))); // NOI18N
-        BotonCerrar.setText("Cerrar Sesión");
-        BotonCerrar.setToolTipText("");
-        BotonCerrar.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
-        BotonCerrar.setContentAreaFilled(false);
-        BotonCerrar.setHideActionText(true);
-        BotonCerrar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        BotonCerrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CerrarPequenoNew.png"))); // NOI18N
-        BotonCerrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/CerrarNegroNew.png"))); // NOI18N
-        BotonCerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonCerrarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BotonCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 430, 430, 310));
+        Fondoazul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondoazulpanel.png"))); // NOI18N
+        getContentPane().add(Fondoazul, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 590, 330));
+
+        Fondoazul3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondoazulpanel.png"))); // NOI18N
+        getContentPane().add(Fondoazul3, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 420, 590, 330));
+
+        Fondoazul1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondoazulpanel.png"))); // NOI18N
+        getContentPane().add(Fondoazul1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 40, 590, 330));
 
         Mostrar.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         Mostrar.setForeground(new java.awt.Color(153, 153, 153));
@@ -435,7 +451,7 @@ public class MenuP extends javax.swing.JFrame {
         // TODO add your handling code here:
         CambiarClave obj = new CambiarClave();
         obj.setVisible(true);
-        
+        dispose();
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
@@ -556,6 +572,10 @@ public class MenuP extends javax.swing.JFrame {
     private javax.swing.JButton BotonDoctor;
     private javax.swing.JButton BotonPacientes;
     private javax.swing.JLabel FondoMenu;
+    private javax.swing.JLabel Fondoazul;
+    private javax.swing.JLabel Fondoazul1;
+    private javax.swing.JLabel Fondoazul2;
+    private javax.swing.JLabel Fondoazul3;
     private javax.swing.JMenu MenuAcercade;
     private javax.swing.JMenu MenuAdm;
     private javax.swing.JMenuItem MenuCrearUsuario;
