@@ -111,7 +111,7 @@ public class LoginDAO {
                objLogin.setNombre(rs.getString("UsuarioNombre"));
                objLogin.setUser(rs.getString("UsuarioUser"));
                objLogin.setClave(rs.getString("UsuarioClave"));
-                
+               objLogin.setUsuarioTipo(rs.getString("UsuarioTipo"));
                 
             }
             

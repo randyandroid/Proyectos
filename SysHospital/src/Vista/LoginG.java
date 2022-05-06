@@ -12,9 +12,9 @@ public class LoginG extends javax.swing.JFrame {
 
     public LoginG() {
         initComponents();
-        
         this.setLocationRelativeTo(null);
         
+ 
     }
     
     
@@ -32,7 +32,7 @@ public class LoginG extends javax.swing.JFrame {
            
           if(objLogin.getUser()!= null && objLogin.getClave() != null){
               
-              MenuP objMenuP = new MenuP();
+              MenuP objMenuP = new MenuP(objLogin);
               objMenuP.setVisible(true);
               dispose();
               

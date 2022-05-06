@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Modelo.Login;
 import java.awt.BorderLayout;
 import java.awt.Cursor;
 import static java.awt.Frame.HAND_CURSOR;
@@ -20,21 +21,51 @@ public class MenuP extends javax.swing.JFrame {
     /**
      * Creates new form MenuP
      */
+    
+    
+    
+    //constructor por defecto
     public MenuP() {
       
         initComponents();
         
+    }
+    
+    
+    
+    //constructor  con sobrecarga de metodos
+    
+    public MenuP(Login Privilegios){
+        
+        initComponents();
         this.setExtendedState(MAXIMIZED_BOTH); //maximizo la ventana
      
         VerMedico me = new VerMedico ();
         me.setSize(1070, 550);
         me.setLocation(0, 0);
         
-         BotonDoctor.setCursor(new Cursor(HAND_CURSOR));
+       BotonDoctor.setCursor(new Cursor(HAND_CURSOR));
         BotonPacientes.setCursor(new Cursor(HAND_CURSOR));
         BotonCitas.setCursor(new Cursor(HAND_CURSOR));
-        BotonCerrar.setCursor(new Cursor(HAND_CURSOR));
+        BotonCerrar.setCursor(new Cursor(HAND_CURSOR)); 
        
+        
+        if(Privilegios.getUsuarioTipo().equals("Usuario")){
+            
+            MenuCrearUsuario.setEnabled(false);
+            MenuVerUsuario.setEnabled(false);
+            
+         
+            NombreUsuario.setText("Usuario: "+Privilegios.getNombre());
+            
+            
+        }else{
+        
+          NombreUsuario.setText("Administrador: "+Privilegios.getNombre());
+           
+            
+    }
+        
         
         
     }
@@ -50,6 +81,7 @@ public class MenuP extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelPrincipal = new javax.swing.JPanel();
+        NombreUsuario = new javax.swing.JLabel();
         BotonDoctor = new javax.swing.JButton();
         BotonCerrar = new javax.swing.JButton();
         BotonPacientes = new javax.swing.JButton();
@@ -99,6 +131,11 @@ public class MenuP extends javax.swing.JFrame {
         );
 
         getContentPane().add(PanelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1634, 982, -1, -1));
+
+        NombreUsuario.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        NombreUsuario.setForeground(new java.awt.Color(0, 0, 0));
+        NombreUsuario.setText("Randy Marmol");
+        getContentPane().add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 190, 20));
 
         BotonDoctor.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         BotonDoctor.setForeground(new java.awt.Color(0, 0, 0));
@@ -609,6 +646,7 @@ public class MenuP extends javax.swing.JFrame {
     private javax.swing.JMenu MenuVer;
     private javax.swing.JMenuItem MenuVerUsuario;
     private javax.swing.JLabel Mostrar;
+    private javax.swing.JLabel NombreUsuario;
     private javax.swing.JPanel PanelPrincipal;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
