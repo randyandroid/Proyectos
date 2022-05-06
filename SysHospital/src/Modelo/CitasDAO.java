@@ -116,6 +116,57 @@ public class CitasDAO {
     }
     //fin listar 
   
+     
+     public boolean ModificarCita(Citas Acita){
+
+        String sql = "UPDATE citas SET PacienteNombre=?, PacienteApellido=?, PacienteCedula=?, Telefono=?, PacienteEdad=?,"
+                + "PacienteSexo =?, PacienteFecha =?,PacienteJornada=?,PacienteHora=?,TipoCita=?,PacienteMedico=? WHERE idcitas =?";
+       
+        try{
+            
+            ps = con.prepareStatement(sql);
+            ps.setString(1, Acita.getNombre());
+            ps.setString(2, Acita.getApellido());
+            ps.setString(3, Acita.getCedula());
+            ps.setString(4, Acita.getTelefono());
+            ps.setInt(5, Acita.getEdad());
+            ps.setString(6, Acita.getSexo());
+            ps.setString(7, Acita.getFecha());
+            ps.setString(8, Acita.getJornada());
+            ps.setString(9, Acita.getHora());
+            ps.setString(10, Acita.getTipo());
+           ps.setString(11, Acita.getMedico());
+            ps.setInt(12, Acita.getId());
+           
+            
+            ps.execute();
+            
+            return true;
+        }catch(SQLException e){
+            
+            JOptionPane.showMessageDialog(null, e.toString());
+            return false;
+            
+        }//fin de la excepcion
+        
+        finally{
+            
+            try{
+               con.close();
+                
+            }catch(SQLException e){
+                
+                JOptionPane.showMessageDialog(null, e.toString());
+            }
+        }//fin del cierre de conexion
+        
+        
+    }
+    
+     
+     
+     
+     
       
     
 }

@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `db_hospital` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `db_hospital`;
 -- MySQL dump 10.13  Distrib 8.0.24, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: db_hospital
@@ -38,7 +36,7 @@ CREATE TABLE `citas` (
   `TipoCita` varchar(100) NOT NULL,
   `PacienteMedico` varchar(100) NOT NULL,
   PRIMARY KEY (`idcitas`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +45,7 @@ CREATE TABLE `citas` (
 
 LOCK TABLES `citas` WRITE;
 /*!40000 ALTER TABLE `citas` DISABLE KEYS */;
-INSERT INTO `citas` VALUES (1,'Randy','Marmol','40209476353','809-376-0058',23,'Masculino','2022-05-01','Matutina','8:00','Primera Vez','Prueba Prueba'),(2,'Prueba','Prueba','Prueba','Prueba',15,'Masculino','2022-05-03','Vespertina','1:00','Rutinaria','Prueba Prueba');
+INSERT INTO `citas` VALUES (1,'Randy','Marmol','40209476353','809-376-0058',23,'Masculino','2022-05-01','Matutina','8:00','Primera Vez','Prueba Prueba'),(2,'Prueba','Prueba','Prueba','Prueba',15,'Masculino','2022-05-03','Vespertina','1:00','Rutinaria','Prueba Prueba'),(3,'Randy','Marmol','40209476353','809-376-0058',23,'Masculino','2022-05-02','Vespertina','2:00','Rutinaria','Prueba Prueba'),(4,'Randy','Marmol','40209476353','809-376-0058',23,'Masculino','1970-01-01','Vespertina','1:00','Rutinaria','Prueba Prueba'),(5,'Randy','Marmol','40209476353','809-376-0058',23,'Femenino','1970-01-01','Vespertina','1:00','Rutinaria','Prueba Prueba');
 /*!40000 ALTER TABLE `citas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -176,4 +174,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-03 22:37:21
+-- Dump completed on 2022-05-05 21:58:45

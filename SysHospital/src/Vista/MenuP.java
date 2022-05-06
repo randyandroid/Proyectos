@@ -34,6 +34,7 @@ public class MenuP extends javax.swing.JFrame {
         BotonPacientes.setCursor(new Cursor(HAND_CURSOR));
         BotonCitas.setCursor(new Cursor(HAND_CURSOR));
         BotonCerrar.setCursor(new Cursor(HAND_CURSOR));
+       
         
         
     }
@@ -73,6 +74,7 @@ public class MenuP extends javax.swing.JFrame {
         MenuTurnos = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         MenuAdm = new javax.swing.JMenu();
         MenuSeg = new javax.swing.JMenu();
@@ -290,13 +292,21 @@ public class MenuP extends javax.swing.JFrame {
         });
         MenuTurnos.add(jMenuItem11);
 
-        jMenuItem12.setText("Registrar Medicos");
+        jMenuItem12.setText("Crear Nueva Cita");
         jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem12ActionPerformed(evt);
             }
         });
         MenuTurnos.add(jMenuItem12);
+
+        jMenuItem13.setText("Editar Cita Existente");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        MenuTurnos.add(jMenuItem13);
 
         MenuVer.add(MenuTurnos);
 
@@ -524,6 +534,18 @@ public class MenuP extends javax.swing.JFrame {
                
     }//GEN-LAST:event_MostrarAncestorAdded
 
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        // TODO add your handling code here:
+         Citas Ci = new Citas ();
+        Ci.setVisible(true);
+         
+         Ci.ACitas();
+         dispose();
+        
+        
+  
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -592,6 +614,7 @@ public class MenuP extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
