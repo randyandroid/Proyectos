@@ -127,26 +127,25 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                      <Component id="BotonPaciente" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                      <Component id="BotonRegistrarPaciente" min="-2" pref="273" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="HistorialClinico" min="-2" pref="262" max="-2" attributes="0"/>
-                      <EmptySpace pref="318" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <Component id="BotonPaciente" min="-2" pref="181" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                      <Component id="BotonRegistrarPaciente" min="-2" pref="298" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                      <Component id="HistorialClinico" min="-2" pref="310" max="-2" attributes="0"/>
+                      <EmptySpace pref="156" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="74" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="80" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="HistorialClinico" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="BotonRegistrarPaciente" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="BotonPaciente" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -164,32 +163,11 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Historial Cl&#xed;nico "/>
-                <Property name="contentAreaFilled" type="boolean" value="false"/>
                 <Property name="name" type="java.lang.String" value="" noResource="true"/>
                 <Property name="selected" type="boolean" value="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HistorialClinicoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="BotonRegistrarPaciente">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Dialog" size="24" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Registrar Pacientes"/>
-                <Property name="contentAreaFilled" type="boolean" value="false"/>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-                <Property name="selected" type="boolean" value="true"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonRegistrarPacienteActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="BotonPaciente">
@@ -204,12 +182,30 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Pacientes "/>
-                <Property name="contentAreaFilled" type="boolean" value="false"/>
                 <Property name="name" type="java.lang.String" value="" noResource="true"/>
                 <Property name="selected" type="boolean" value="true"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonPacienteActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="BotonRegistrarPaciente">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="24" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Registrar Pacientes"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
+                <Property name="selected" type="boolean" value="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonRegistrarPacienteActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

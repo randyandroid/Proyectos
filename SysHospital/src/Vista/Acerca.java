@@ -4,6 +4,7 @@
  */
 package Vista;
 
+import Modelo.Login;
 import java.util.Enumeration;
 import java.util.Properties;
 

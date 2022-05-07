@@ -98,7 +98,6 @@ public class Citas extends javax.swing.JFrame {
         BotonAgendarCitas.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonAgendarCitas.setForeground(new java.awt.Color(0, 0, 0));
         BotonAgendarCitas.setText("Agendar Citas");
-        BotonAgendarCitas.setContentAreaFilled(false);
         BotonAgendarCitas.setName(""); // NOI18N
         BotonAgendarCitas.setSelected(true);
         BotonAgendarCitas.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +110,6 @@ public class Citas extends javax.swing.JFrame {
         BotonVerCitas.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonVerCitas.setForeground(new java.awt.Color(0, 0, 0));
         BotonVerCitas.setText("Ver Citas");
-        BotonVerCitas.setContentAreaFilled(false);
         BotonVerCitas.setName(""); // NOI18N
         BotonVerCitas.setSelected(true);
         BotonVerCitas.addActionListener(new java.awt.event.ActionListener() {
@@ -125,20 +123,19 @@ public class Citas extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(BotonVerCitas)
-                .addGap(61, 61, 61)
+                .addGap(33, 33, 33)
+                .addComponent(BotonVerCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(BotonAgendarCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(631, Short.MAX_VALUE))
+                .addContainerGap(612, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(74, Short.MAX_VALUE)
+                .addGap(0, 80, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonAgendarCitas)
-                    .addComponent(BotonVerCitas))
-                .addContainerGap())
+                    .addComponent(BotonVerCitas)
+                    .addComponent(BotonAgendarCitas)))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 1130, 120));

@@ -69,8 +69,8 @@ public class LoginG extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        IconoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoLogin.png"))); // NOI18N
-        getContentPane().add(IconoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
+        IconoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logo de hospitalll.png"))); // NOI18N
+        getContentPane().add(IconoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
 
         LabelUsuario.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         LabelUsuario.setForeground(new java.awt.Color(102, 102, 102));
@@ -138,7 +138,7 @@ public class LoginG extends javax.swing.JFrame {
         });
         getContentPane().add(BotonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 450, 120, 40));
 
-        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LoginMedicina.jpg"))); // NOI18N
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FondoLogoBorroso.png"))); // NOI18N
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 520));
 
         pack();

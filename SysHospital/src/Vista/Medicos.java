@@ -53,8 +53,8 @@ public class Medicos extends javax.swing.JFrame {
         FondoPortada = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         VerMedico = new javax.swing.JButton();
-        BotonRegistrarMedico = new javax.swing.JButton();
         BotonMedico = new javax.swing.JButton();
+        BotonRegistrarMedico = new javax.swing.JButton();
         Contenedor = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -110,6 +110,18 @@ public class Medicos extends javax.swing.JFrame {
             }
         });
 
+        BotonMedico.setBackground(new java.awt.Color(204, 204, 204));
+        BotonMedico.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        BotonMedico.setForeground(new java.awt.Color(0, 0, 0));
+        BotonMedico.setText("Médicos");
+        BotonMedico.setName(""); // NOI18N
+        BotonMedico.setSelected(true);
+        BotonMedico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonMedicoActionPerformed(evt);
+            }
+        });
+
         BotonRegistrarMedico.setBackground(new java.awt.Color(204, 204, 204));
         BotonRegistrarMedico.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonRegistrarMedico.setForeground(new java.awt.Color(0, 0, 0));
@@ -131,40 +143,27 @@ public class Medicos extends javax.swing.JFrame {
             }
         });
 
-        BotonMedico.setBackground(new java.awt.Color(204, 204, 204));
-        BotonMedico.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        BotonMedico.setForeground(new java.awt.Color(0, 0, 0));
-        BotonMedico.setText("Médicos");
-        BotonMedico.setName(""); // NOI18N
-        BotonMedico.setSelected(true);
-        BotonMedico.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonMedicoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(BotonMedico)
+                .addGap(29, 29, 29)
+                .addComponent(BotonMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(65, 65, 65)
-                .addComponent(BotonRegistrarMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
+                .addComponent(BotonRegistrarMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
                 .addComponent(VerMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(74, Short.MAX_VALUE)
+                .addGap(0, 80, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonMedico)
                     .addComponent(VerMedico)
-                    .addComponent(BotonRegistrarMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonMedico))
-                .addContainerGap())
+                    .addComponent(BotonRegistrarMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 1130, 120));
@@ -225,8 +224,17 @@ public void DMedicos() {
     
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       MenuP MP = new MenuP();
+     
+        
+        
+        
+           MenuP MP = new MenuP();
            MP.setVisible(true);
+        
+
+       
+
+
            dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

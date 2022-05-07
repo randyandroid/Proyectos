@@ -53,8 +53,8 @@ public class Paciente extends javax.swing.JFrame {
         FondoPortada = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         HistorialClinico = new javax.swing.JButton();
-        BotonRegistrarPaciente = new javax.swing.JButton();
         BotonPaciente = new javax.swing.JButton();
+        BotonRegistrarPaciente = new javax.swing.JButton();
         Contenedor = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -102,7 +102,6 @@ public class Paciente extends javax.swing.JFrame {
         HistorialClinico.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         HistorialClinico.setForeground(new java.awt.Color(0, 0, 0));
         HistorialClinico.setText("Historial Clínico ");
-        HistorialClinico.setContentAreaFilled(false);
         HistorialClinico.setName(""); // NOI18N
         HistorialClinico.setSelected(true);
         HistorialClinico.addActionListener(new java.awt.event.ActionListener() {
@@ -111,24 +110,10 @@ public class Paciente extends javax.swing.JFrame {
             }
         });
 
-        BotonRegistrarPaciente.setBackground(new java.awt.Color(204, 204, 204));
-        BotonRegistrarPaciente.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        BotonRegistrarPaciente.setForeground(new java.awt.Color(0, 0, 0));
-        BotonRegistrarPaciente.setText("Registrar Pacientes");
-        BotonRegistrarPaciente.setContentAreaFilled(false);
-        BotonRegistrarPaciente.setName(""); // NOI18N
-        BotonRegistrarPaciente.setSelected(true);
-        BotonRegistrarPaciente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonRegistrarPacienteActionPerformed(evt);
-            }
-        });
-
         BotonPaciente.setBackground(new java.awt.Color(204, 204, 204));
         BotonPaciente.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         BotonPaciente.setForeground(new java.awt.Color(0, 0, 0));
         BotonPaciente.setText("Pacientes ");
-        BotonPaciente.setContentAreaFilled(false);
         BotonPaciente.setName(""); // NOI18N
         BotonPaciente.setSelected(true);
         BotonPaciente.addActionListener(new java.awt.event.ActionListener() {
@@ -137,28 +122,39 @@ public class Paciente extends javax.swing.JFrame {
             }
         });
 
+        BotonRegistrarPaciente.setBackground(new java.awt.Color(204, 204, 204));
+        BotonRegistrarPaciente.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        BotonRegistrarPaciente.setForeground(new java.awt.Color(0, 0, 0));
+        BotonRegistrarPaciente.setText("Registrar Pacientes");
+        BotonRegistrarPaciente.setName(""); // NOI18N
+        BotonRegistrarPaciente.setSelected(true);
+        BotonRegistrarPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRegistrarPacienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(BotonPaciente)
-                .addGap(61, 61, 61)
-                .addComponent(BotonRegistrarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(HistorialClinico, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(318, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
+                .addComponent(BotonPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
+                .addComponent(BotonRegistrarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
+                .addComponent(HistorialClinico, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(156, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(74, Short.MAX_VALUE)
+                .addGap(0, 80, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(HistorialClinico)
                     .addComponent(BotonRegistrarPaciente)
-                    .addComponent(BotonPaciente))
-                .addContainerGap())
+                    .addComponent(BotonPaciente)))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 1130, 120));
@@ -234,7 +230,7 @@ public class Paciente extends javax.swing.JFrame {
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
              MenuP MP = new MenuP();
-           MP.setVisible(true);
+             MP.setVisible(true);
            dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

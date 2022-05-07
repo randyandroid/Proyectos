@@ -11,6 +11,7 @@ import java.awt.Cursor;
 import static java.awt.Frame.HAND_CURSOR;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,6 +29,10 @@ public class MenuP extends javax.swing.JFrame {
     public MenuP() {
       
         initComponents();
+         BotonDoctor.setCursor(new Cursor(HAND_CURSOR));
+        BotonPacientes.setCursor(new Cursor(HAND_CURSOR));
+        BotonCitas.setCursor(new Cursor(HAND_CURSOR));
+        BotonCerrar.setCursor(new Cursor(HAND_CURSOR)); 
         
     }
     
@@ -44,10 +49,7 @@ public class MenuP extends javax.swing.JFrame {
         me.setSize(1070, 550);
         me.setLocation(0, 0);
         
-       BotonDoctor.setCursor(new Cursor(HAND_CURSOR));
-        BotonPacientes.setCursor(new Cursor(HAND_CURSOR));
-        BotonCitas.setCursor(new Cursor(HAND_CURSOR));
-        BotonCerrar.setCursor(new Cursor(HAND_CURSOR)); 
+       
        
         
         if(Privilegios.getUsuarioTipo().equals("Usuario")){
@@ -56,17 +58,17 @@ public class MenuP extends javax.swing.JFrame {
             MenuVerUsuario.setEnabled(false);
             
          
-            NombreUsuario.setText("Usuario: "+Privilegios.getNombre());
+            NombreUsuario.setText("Bienvenido Usuario : "+Privilegios.getNombre());
             
             
         }else{
         
-          NombreUsuario.setText("Administrador: "+Privilegios.getNombre());
+          NombreUsuario.setText("Bienvenido Administrador : "+Privilegios.getNombre());
            
             
     }
         
-        
+       
         
     }
     
@@ -132,10 +134,9 @@ public class MenuP extends javax.swing.JFrame {
 
         getContentPane().add(PanelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1634, 982, -1, -1));
 
-        NombreUsuario.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        NombreUsuario.setForeground(new java.awt.Color(0, 0, 0));
-        NombreUsuario.setText("Randy Marmol");
-        getContentPane().add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 190, 20));
+        NombreUsuario.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        NombreUsuario.setForeground(new java.awt.Color(153, 153, 153));
+        getContentPane().add(NombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 990, 50));
 
         BotonDoctor.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         BotonDoctor.setForeground(new java.awt.Color(0, 0, 0));
@@ -419,6 +420,11 @@ public class MenuP extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+        
+        
+        
+        
+        
     private void MenuCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCrearUsuarioActionPerformed
         // TODO add your handling code here:
          RegistroUsuario objRegistroUsuario = new RegistroUsuario();
@@ -457,7 +463,7 @@ public class MenuP extends javax.swing.JFrame {
            pa.setVisible(true);
            
            
-           dispose();
+          dispose();
     }//GEN-LAST:event_BotonPacientesActionPerformed
 
     private void BotonCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCitasActionPerformed

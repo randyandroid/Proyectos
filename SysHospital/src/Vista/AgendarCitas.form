@@ -141,133 +141,116 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="Apellido" min="-2" pref="70" max="-2" attributes="0"/>
-                              <Component id="Nombre" alignment="1" min="-2" pref="70" max="-2" attributes="0"/>
-                              <Component id="NombreMedico7" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="NombreMedico6" min="-2" pref="70" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                          </Group>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="Apellido" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="Nombre" alignment="1" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="NombreMedico7" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="NombreMedico15" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="NombreMedico15" min="-2" max="-2" attributes="0"/>
+                              <Component id="NombreMedico6" min="-2" pref="70" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="Nombre1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="TxtApellido" min="-2" pref="287" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="96" max="32767" attributes="0"/>
                           <Component id="NombreMedico8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="FechaCita" min="-2" pref="292" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="TxtCedula" min="-2" pref="287" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="NombreMedico13" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="TxtTelefono" min="-2" pref="287" max="-2" attributes="0"/>
-                                          <EmptySpace pref="109" max="32767" attributes="0"/>
-                                          <Component id="NombreMedico9" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="TxtEdad" min="-2" pref="287" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="NombreMedico10" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="CbxMedico" min="-2" pref="294" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="CbxJornada" min="-2" pref="149" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="NombreMedico14" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="TxtHora" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Component id="CbxCita" min="-2" pref="292" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="TxtNombre" min="-2" pref="287" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
-                                  <Component id="NombreMedico11" min="-2" pref="49" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="CbxSexo" min="-2" pref="292" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="487" max="-2" attributes="0"/>
-                                  <Component id="jButton1" min="-2" pref="101" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                                  <Component id="Nombre1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtBuscar" min="-2" pref="126" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="txtBuscar" min="-2" pref="178" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="IdCita" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jButton2" min="-2" pref="126" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jButton1" min="-2" pref="112" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="BotonAgregar" min="-2" pref="114" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="TxtCedula" min="-2" pref="287" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="NombreMedico13" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="TxtTelefono" min="-2" pref="287" max="-2" attributes="0"/>
+                                              <EmptySpace pref="109" max="32767" attributes="0"/>
+                                              <Component id="NombreMedico9" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="TxtEdad" min="-2" pref="287" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="NombreMedico10" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="CbxMedico" min="-2" pref="294" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="CbxJornada" min="-2" pref="149" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="NombreMedico14" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="TxtHora" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Component id="CbxCita" min="-2" pref="292" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="TxtNombre" min="-2" pref="287" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                                      <Component id="NombreMedico11" min="-2" pref="49" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="CbxSexo" min="-2" pref="292" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="417" max="-2" attributes="0"/>
-                          <Component id="BotonAgregar" min="-2" pref="274" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="IdCita" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtBuscar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                              <Component id="Nombre1" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="Nombre1" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="txtBuscar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="jButton1" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="jButton2" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="BotonAgregar" pref="105" max="32767" attributes="0"/>
+                              <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="IdCita" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="Nombre" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="TxtNombre" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
@@ -317,9 +300,7 @@
                           <Component id="NombreMedico10" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                  <Component id="BotonAgregar" min="-2" pref="58" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="317" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -388,13 +369,6 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Fecha de cita : "/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/Citasicono.png"/>
-            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="NombreMedico9">
@@ -574,30 +548,80 @@
         <Component class="javax.swing.JButton" name="BotonAgregar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="24" style="1"/>
+              <Font name="Arial Black" size="12" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="33" red="33" type="rgb"/>
+              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Guardar"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/GuardarGrande.png"/>
+            </Property>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
+            <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/GuardarP.png"/>
+            </Property>
+            <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/GuardarGrande.png"/>
+            </Property>
+            <Property name="verticalAlignment" type="int" value="3"/>
+            <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BotonAgregarMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BotonAgregarMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonAgregarActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Buscar Cita"/>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="99" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/buscarG.png"/>
+            </Property>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
+            <Property name="hideActionText" type="boolean" value="true"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
+            <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/buscarP.png"/>
+            </Property>
+            <Property name="rolloverSelectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/buscarG.png"/>
+            </Property>
+            <Property name="verticalAlignment" type="int" value="3"/>
+            <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Editar cita"/>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="99" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/editarG.png"/>
+            </Property>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
+            <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/editarP.png"/>
+            </Property>
+            <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/editarG.png"/>
+            </Property>
+            <Property name="verticalAlignment" type="int" value="3"/>
+            <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton2MouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton2MouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
           </Events>
         </Component>
@@ -605,6 +629,9 @@
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IdCitaActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
