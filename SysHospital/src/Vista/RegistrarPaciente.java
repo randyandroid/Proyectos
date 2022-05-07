@@ -11,8 +11,12 @@ import static java.awt.Frame.HAND_CURSOR;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JOptionPane;
-
-
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.RowFilter;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -22,7 +26,9 @@ public class RegistrarPaciente extends javax.swing.JPanel {
     
     Paciente objPaciente = new Paciente();
     PacienteDAO objPacienteDAO = new PacienteDAO();
+    TableRowSorter TrsBuscar;
     
+    DefaultTableModel ModeloTabla = new DefaultTableModel();
     
 
     /**
@@ -30,10 +36,48 @@ public class RegistrarPaciente extends javax.swing.JPanel {
      */
     public RegistrarPaciente() {
         initComponents();
+         ListarPaciente();
         
+        BuscarPaciente.setSize(900,400);
+        BuscarPaciente.setLocationRelativeTo(null);
+        IdMedicos.setVisible(false);
+         
         BotonRegistrar.setCursor(new Cursor(HAND_CURSOR));
     }
 
+    
+    public void ListarPaciente(){
+        
+        List<Paciente> objPacienteLista = objPacienteDAO.ListarPaciente();
+        ModeloTabla = (DefaultTableModel) TablaPaciente.getModel();
+        Object[] obj = new Object[11];
+        
+        for(int i=0; i<objPacienteLista.size(); i++){
+            
+            obj[0] = objPacienteLista.get(i).getId();
+            obj[1] = objPacienteLista.get(i).getCedula();
+            obj[2] = objPacienteLista.get(i).getNombre();
+            obj[3] = objPacienteLista.get(i).getApellido();
+            obj[4] = objPacienteLista.get(i).getTelefono();
+            obj[5] = objPacienteLista.get(i).getDireccion();
+            obj[6] = objPacienteLista.get(i).getFechaNacimiento();
+            obj[7] = objPacienteLista.get(i).getEdad();
+            obj[8] = objPacienteLista.get(i).getEstado();
+            obj[9] = objPacienteLista.get(i).getSexo();
+            obj[10] = objPacienteLista.get(i).getFechaIngreso();
+            
+            
+            ModeloTabla.addRow(obj);
+            
+        }//fin del for
+         
+        TablaPaciente.setModel(ModeloTabla);
+        
+    }//fin del metodo
+ 
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,6 +87,13 @@ public class RegistrarPaciente extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BuscarPaciente = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TablaPaciente = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        BtnBuscar = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         Nombre = new javax.swing.JLabel();
         NombreMedico2 = new javax.swing.JLabel();
@@ -67,6 +118,98 @@ public class RegistrarPaciente extends javax.swing.JPanel {
         JdtPacienteFecha = new com.toedter.calendar.JDateChooser();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        IdMedicos = new javax.swing.JTextField();
+
+        BuscarPaciente.setModal(true);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1070, 550));
+
+        TablaPaciente.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Cedula", "Nombre", "Apellido", "Telefono", "Domicilio", "Fecha Nacimiento", "Edad", "Estado Civil", "Sexo", "Fecha Ingreso"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        TablaPaciente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaPacienteMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(TablaPaciente);
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Buscar Paciente:");
+
+        BtnBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                BtnBuscarKeyTyped(evt);
+            }
+        });
+
+        jButton3.setText("Actualizar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 828, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(231, 231, 231)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BtnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(189, 189, 189)
+                        .addComponent(jButton3)))
+                .addContainerGap(188, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(BtnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(172, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout BuscarPacienteLayout = new javax.swing.GroupLayout(BuscarPaciente.getContentPane());
+        BuscarPaciente.getContentPane().setLayout(BuscarPacienteLayout);
+        BuscarPacienteLayout.setHorizontalGroup(
+            BuscarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BuscarPacienteLayout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        BuscarPacienteLayout.setVerticalGroup(
+            BuscarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BuscarPacienteLayout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -213,7 +356,7 @@ public class RegistrarPaciente extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 38, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(NombreMedico2)
                                     .addComponent(NombreMedico6)
@@ -257,6 +400,10 @@ public class RegistrarPaciente extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(BotonRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(214, 214, 214))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addComponent(IdMedicos, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,7 +413,9 @@ public class RegistrarPaciente extends javax.swing.JPanel {
                     .addComponent(BotonRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
+                .addGap(8, 8, 8)
+                .addComponent(IdMedicos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JdtPacienteNacimiento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -310,7 +459,7 @@ public class RegistrarPaciente extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(DomicilioPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(NombreMedico3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(321, Short.MAX_VALUE))
+                .addContainerGap(313, Short.MAX_VALUE))
         );
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 730));
@@ -393,7 +542,10 @@ public class RegistrarPaciente extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1MouseExited
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      
+
+        BuscarPaciente.setVisible(true);
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseEntered
@@ -407,35 +559,40 @@ public class RegistrarPaciente extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
 
-      /*  int Afecha;
-        int Mfecha;
-        int Dfecha;
+       //convierto las fechas
+       int Anac,Aing;
+       int Mnac,Ming;
+       int Dnac,Ding;
+       
+       
+       Anac = JdtPacienteNacimiento.getCalendar().get(Calendar.YEAR);
+       Aing = JdtPacienteFecha.getCalendar().get(Calendar.YEAR);
+       Mnac = JdtPacienteNacimiento.getCalendar().get(Calendar.MONTH)+1;
+       Ming = JdtPacienteFecha.getCalendar().get(Calendar.MONTH)+1;
+       Dnac = JdtPacienteNacimiento.getCalendar().get(Calendar.DAY_OF_MONTH);
+       Ding = JdtPacienteFecha.getCalendar().get(Calendar.DAY_OF_MONTH);
+       
+       String NfechaNac = Anac+ "-"+Mnac+ "-"+Dnac;
+       String NfechaIng = Aing+ "-"+Ming+ "-"+Ding;
 
-        Afecha = FechaCita.getCalendar().get(Calendar.YEAR);
-        Mfecha = FechaCita.getCalendar().get(Calendar.MONTH)+1;
-        Dfecha = FechaCita.getCalendar().get(Calendar.DAY_OF_MONTH);
+ 
+        if (!"".equals(IdMedicos.getText()) && !"".equals(CedulaPaciente.getText()) && !"".equals(NombrePaciente.getText()) && !"".equals(TelefonoPaciente.getText()) && !"".equals(DomicilioPaciente.getText()) && !"".equals(JdtPacienteNacimiento.getDate()) && !"".equals(EdadPaciente.getText()) && !"".equals(CbxPacienteEstado.getSelectedItem()) && !"".equals(CbxPacienteSexo.getSelectedItem()) && !"".equals(JdtPacienteFecha.getDate()) ) {
+       
 
-        String NfechaCita = Afecha+ "-"+Mfecha+ "-"+Dfecha;
+       objPaciente.setCedula(CedulaPaciente.getText());
+        objPaciente.setNombre(NombrePaciente.getText());
+        objPaciente.setApellido(ApellidoPaciente.getText());
+        objPaciente.setTelefono(TelefonoPaciente.getText());
+        objPaciente.setDireccion(DomicilioPaciente.getText());
+        objPaciente.setFechaNacimiento(NfechaNac);
+        objPaciente.setEdad(Integer.parseInt(EdadPaciente.getText()));
+        objPaciente.setEstado((String) CbxPacienteEstado.getSelectedItem());
+        objPaciente.setSexo((String) CbxPacienteSexo.getSelectedItem());
+       objPaciente.setFechaIngreso(NfechaIng);
 
-        if(!"".equals(IdCita.getText()) || !"".equals( TxtNombre.getText()) || !"".equals(TxtApellido.
-            getText()) || !"".equals(TxtCedula.getText())  || !"".equals(TxtTelefono.getText()) || !"".equals(TxtEdad.getText()) || !"".equals(CbxSexo.
-            getSelectedIndex()) || !"".equals(FechaCita.getDate()) || !"".equals(CbxJornada.getSelectedIndex())   || !"".equals(TxtHora.
-            getText()) || !"".equals(CbxMedico.getSelectedIndex()) || !"".equals(CbxCita.getSelectedIndex())){
-
-        objCita.setNombre(TxtNombre.getText());
-        objCita.setApellido(TxtApellido.getText());
-        objCita.setCedula(TxtCedula.getText());
-        objCita.setTelefono(TxtTelefono.getText());
-        objCita.setEdad(Integer.parseInt(TxtEdad.getText()));
-        objCita.setSexo(CbxSexo.getSelectedItem().toString());
-        objCita.setFecha(NfechaCita);
-        objCita.setJornada(CbxJornada.getSelectedItem().toString());
-        objCita.setHora(TxtHora.getText());
-        objCita.setTipo(CbxCita.getSelectedItem().toString());
-        objCita.setMedico(CbxMedico.getSelectedItem().toString());
-
-        objCitaDAO.ModificarCita(objCita);
-        JOptionPane.showMessageDialog(null, "La cita fue cambiada");
+       objPacienteDAO.ModificarPaciente(objPaciente);
+       
+        JOptionPane.showMessageDialog(null, "El paciente fue editado");
 
         }//fin del if
 
@@ -443,20 +600,75 @@ public class RegistrarPaciente extends javax.swing.JPanel {
 
             JOptionPane.showMessageDialog(null, "Hay campos vacios");
 
-        }//fin del else*/
+        }//fin del else
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void BtnBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnBuscarKeyTyped
+        // TODO add your handling code here:
+        
+        BuscarPaciente.addKeyListener(new KeyAdapter(){
+            @Override
+            public void keyReleased(KeyEvent e) {
+               
+                TrsBuscar.setRowFilter(RowFilter.regexFilter(BtnBuscar.getText(), 0,1,2));
+               
+                
+            }
+            
+        } );
+        
+        TrsBuscar = new TableRowSorter(ModeloTabla);
+        TablaPaciente.setRowSorter(TrsBuscar);
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_BtnBuscarKeyTyped
+
+    private void TablaPacienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaPacienteMouseClicked
+        // TODO add your handling code here:
+        
+        int ValorTabla = TablaPaciente.rowAtPoint(evt.getPoint());
+        
+        IdMedicos.setText(TablaPaciente.getValueAt(ValorTabla, 0).toString());
+        CedulaPaciente.setText(TablaPaciente.getValueAt(ValorTabla, 1).toString());
+        NombrePaciente.setText(TablaPaciente.getValueAt(ValorTabla, 2).toString());
+        ApellidoPaciente.setText(TablaPaciente.getValueAt(ValorTabla, 3).toString());
+        TelefonoPaciente.setText(TablaPaciente.getValueAt(ValorTabla, 4).toString());
+       DomicilioPaciente.setText(TablaPaciente.getValueAt(ValorTabla, 5).toString());
+      JdtPacienteNacimiento.setDateFormatString(TablaPaciente.getValueAt(ValorTabla, 6).toString());
+       EdadPaciente.setText(TablaPaciente.getValueAt(ValorTabla, 7).toString());
+       CbxPacienteEstado.setSelectedItem(TablaPaciente.getValueAt(ValorTabla, 8).toString());
+       CbxPacienteSexo.setSelectedItem(TablaPaciente.getValueAt(ValorTabla, 9).toString());
+       JdtPacienteFecha.setDateFormatString(TablaPaciente.getValueAt(ValorTabla, 10).toString());
+          
+    
+        
+    }//GEN-LAST:event_TablaPacienteMouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        
+        ListarPaciente();
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Apellido;
     private javax.swing.JTextField ApellidoPaciente;
     private javax.swing.JButton BotonRegistrar;
+    private javax.swing.JTextField BtnBuscar;
+    private javax.swing.JDialog BuscarPaciente;
     private javax.swing.JComboBox<String> CbxPacienteEstado;
     private javax.swing.JComboBox<String> CbxPacienteSexo;
     private javax.swing.JTextField CedulaPaciente;
     private javax.swing.JTextField DomicilioPaciente;
     private javax.swing.JTextField EdadPaciente;
+    private javax.swing.JTextField IdMedicos;
     private com.toedter.calendar.JDateChooser JdtPacienteFecha;
     private com.toedter.calendar.JDateChooser JdtPacienteNacimiento;
     private javax.swing.JLabel Nombre;
@@ -469,9 +681,14 @@ public class RegistrarPaciente extends javax.swing.JPanel {
     private javax.swing.JLabel NombreMedico7;
     private javax.swing.JLabel NombreMedico8;
     private javax.swing.JTextField NombrePaciente;
+    private javax.swing.JTable TablaPaciente;
     private javax.swing.JTextField TelefonoPaciente;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

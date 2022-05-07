@@ -91,10 +91,11 @@ public class PacienteDAO {
                Lpaciente.setApellido(rs.getString("PacienteApellido"));
                Lpaciente.setTelefono(rs.getString("PacienteTelefono"));
                Lpaciente.setDireccion(rs.getString("PacienteDomicilio"));
+               Lpaciente.setFechaNacimiento(rs.getString("PacienteNacimiento"));
                Lpaciente.setEdad(rs.getInt("PacienteEdad"));
                Lpaciente.setEstado(rs.getString("PacienteEstado"));
                Lpaciente.setSexo(rs.getString("PacienteSexo"));
-                
+               Lpaciente.setFechaIngreso(rs.getString("PacienteFecha"));
                 objPacienteLista.add(Lpaciente);
                 
             }//fin del while
@@ -175,8 +176,51 @@ public class PacienteDAO {
     }
     
         
+        public boolean ModificarPaciente(Paciente Mpaciente){
+
+        String sql = "UPDATE paciente SET PacienteCedula = ?, PacienteNombre=?, PacienteApellido=?, PacienteTelefono=?, PacienteDomicilio=?, PacienteNacimiento=?,"
+                + "PacienteEdad =?, PacienteEstado =?,PacienteSexo=?,PacienteFecha=? WHERE idPaciente =?";
+       
+        try{
+            
+            ps = con.prepareStatement(sql);
+            ps.setString(1, Mpaciente.getCedula());
+            ps.setString(2, Mpaciente.getNombre());
+            ps.setString(3, Mpaciente.getApellido());
+            ps.setString(4, Mpaciente.getTelefono());
+            ps.setString(5, Mpaciente.getDireccion());
+            ps.setString(6, Mpaciente.getFechaNacimiento());
+            ps.setInt(7, Mpaciente.getEdad());
+            ps.setString(8, Mpaciente.getEstado());
+            ps.setString(9, Mpaciente.getSexo());
+            ps.setString(10, Mpaciente.getFechaIngreso());
+            ps.setInt(11, Mpaciente.getId());
+           
+            
+            ps.execute();
+            
+            return true;
+        }catch(SQLException e){
+            
+            JOptionPane.showMessageDialog(null, e.toString());
+            return false;
+            
+        }//fin de la excepcion
+        
+        finally{
+            
+            try{
+               con.close();
+                
+            }catch(SQLException e){
+                
+                JOptionPane.showMessageDialog(null, e.toString());
+            }
+        }//fin del cierre de conexion
         
         
+    }
+    
      
      
     
