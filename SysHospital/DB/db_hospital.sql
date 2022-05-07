@@ -45,7 +45,7 @@ CREATE TABLE `citas` (
 
 LOCK TABLES `citas` WRITE;
 /*!40000 ALTER TABLE `citas` DISABLE KEYS */;
-INSERT INTO `citas` VALUES (1,'Randy','Marmol','40209476353','809-376-0058',23,'Masculino','2022-05-01','Matutina','8:00','Primera Vez','Prueba Prueba'),(2,'Prueba','Prueba','Prueba','Prueba',15,'Masculino','2022-05-03','Vespertina','1:00','Rutinaria','Prueba Prueba'),(3,'Randy','Marmol','40209476353','809-376-0058',23,'Masculino','2022-05-02','Vespertina','2:00','Rutinaria','Prueba Prueba'),(4,'Randy','Marmol','40209476353','809-376-0058',23,'Masculino','1970-01-01','Vespertina','1:00','Rutinaria','Prueba Prueba'),(5,'Randy','Marmol','40209476353','809-376-0058',23,'Femenino','1970-01-01','Vespertina','1:00','Rutinaria','Prueba Prueba');
+
 /*!40000 ALTER TABLE `citas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -101,7 +101,7 @@ CREATE TABLE `medicos` (
 
 LOCK TABLES `medicos` WRITE;
 /*!40000 ALTER TABLE `medicos` DISABLE KEYS */;
-INSERT INTO `medicos` VALUES (3,'Prueba','Prueba','Prueba','prueba','prueba','Soltero','Masculino','Internista','Matutina');
+
 /*!40000 ALTER TABLE `medicos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,7 +134,7 @@ CREATE TABLE `paciente` (
 
 LOCK TABLES `paciente` WRITE;
 /*!40000 ALTER TABLE `paciente` DISABLE KEYS */;
-INSERT INTO `paciente` VALUES (1,'40209476353','Randy','Marmol','809-376-0058','Santiago','1999-02-20',23,'Casado/a','Masculino','2022-03-26'),(2,'Prueba','Prueba','Prueba','Prueba','Prueba','2018-04-01',15,'Soltero/a','Masculino','2022-04-26');
+
 /*!40000 ALTER TABLE `paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 
